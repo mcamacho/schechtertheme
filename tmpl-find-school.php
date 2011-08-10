@@ -1,19 +1,18 @@
 <?php
 /**
- * Template Name: Find a School Page Template
+ * Template Name: Find a School
  * Description: Template and search script
  */
+?>
 
-get_header(); ?>
+<?php get_header(); ?>
 
 		<div id="primary">
 			<div id="content" role="main">
 
 				<?php the_post(); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
-
-				<?php comments_template( '', true ); ?>
+				<?php the_content(); ?>
 
 				<?php
 				//display the search results when variables on $_get url appears	

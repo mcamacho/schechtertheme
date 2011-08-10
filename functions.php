@@ -23,7 +23,7 @@ function schechter_setup() {
 	register_nav_menu( 'footer', __( 'Footer Menu', 'schechtertheme' ) );
 
 	// Add support for custom backgrounds
-	add_custom_background();
+	//add_custom_background();
 	
 }// schechter_setup
 
@@ -65,5 +65,3 @@ function schechter_widgets_init() {
 }
 
 add_action( 'widgets_init', 'schechter_widgets_init' );
-	
-?>

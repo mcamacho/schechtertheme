@@ -67,11 +67,13 @@ footer, header, hgroup, menu, nav, section {
 ----------------------------------------------- */
 
 body {
-	padding: 0 2em;
+	padding: 0 1em;
+	background: transparent url(images/schechter-bg.gif) center top fixed no-repeat;
 }
 #page {
-	margin: 2em auto;
-	width: 1000px;
+	margin: 0 auto;
+	width: 950px;
+	padding: 25px 30px 0 20px;
 }
 #branding hgroup {
 	margin: 0 7.6%;
@@ -96,6 +98,24 @@ body {
 	width: 18.8%;
 }
 
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.625em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.625em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 /* =Content
 ----------------------------------------------- */
@@ -189,13 +209,11 @@ body.home #content header{
 
 body, input, textarea {
 	color: #373737;
-	font: 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	line-height: 1.625;
 }
-body {
-	background: #e2e2e2;
-}
+
 a {
     text-decoration:none;
 }
@@ -217,7 +235,7 @@ a {
     height:98px;
     width:266px;
     text-indent:-1000px;
-    background:url(./images/schechter-logo.gif) no-repeat center;
+    background:url(./images/schechter-logo.gif) no-repeat left top;
 }
 
 #top-head {
@@ -240,8 +258,8 @@ a {
 #tt-icon a,
 #fb-icon a{
     display:block;
-    height:31px;
-    width:31px;
+    height:22px;
+    width:22px;
 }
 #tt-icon a{
     background:url(./images/tt.gif) no-repeat center;
@@ -253,12 +271,27 @@ a {
 #searchform {
     /*float:right;*/
 }
+label.screen-reader-text {
+	display:none;
+}
 
 /* =Footer
 ----------------------------------------------- */
 
 #colophon {
 	clear: both;
+	position:relative;
+	top:65px;
+	height:40px;
+}
+
+footer#colophon,
+footer#colophon a {
+	color:#ffffff;
+}
+
+footer#colophon p {
+	font-size:10px;
 }
 
 /* =Footer Menu

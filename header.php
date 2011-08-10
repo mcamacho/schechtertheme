@@ -77,8 +77,8 @@
 				<ul id="top-menu">
 					<li id="tt-icon"><a href="#" title="twitter link"></a></li>	
 					<li id="fb-icon"><a href="#" title="facebook link"></a></li>
-					<li><a href="#" title="Login link">LOGIN</a></li>
-					<li><a href="#" title="twitter link">CONTACT US</a></li>
+					<li><a href="<?php echo wp_login_url( site_url('/schechter-identity/') ); ?>" title="Login">Login</a></li>
+					<li><a href="<?php echo site_url('/contact-us/'); ?>" title="Contact Us">Contact Us</a></li>
 				</ul><!-- #top-menu -->
 			</nav>
 			<?php get_search_form(); ?>

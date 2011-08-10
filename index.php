@@ -14,10 +14,10 @@ get_header(); ?>
 
 		<div id="primary">
 			<div id="content" role="main">
-
+			<strong style="color:red;">Using index as default markup</strong>
 			<?php if ( have_posts() ) : ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-
+				
 					<?php the_content(); ?>
 
 				<?php endwhile; ?>
