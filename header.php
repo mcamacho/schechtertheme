@@ -77,7 +77,11 @@
 				<ul id="top-menu">
 					<li id="tt-icon"><a href="#" title="twitter link"></a></li>	
 					<li id="fb-icon"><a href="#" title="facebook link"></a></li>
+					<?php if (is_user_logged_in()) : ?>
+					<li><a href="<?php echo wp_logout_url( home_url() ); ?>" title="Logout">Logout</a></li>
+					<?php else : ?>
 					<li><a href="<?php echo wp_login_url( site_url('/schechter-identity/') ); ?>" title="Login">Login</a></li>
+					<?php endif; ?>
 					<li><a href="<?php echo site_url('/contact-us/'); ?>" title="Contact Us">Contact Us</a></li>
 				</ul><!-- #top-menu -->
 			</nav>

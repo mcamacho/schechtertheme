@@ -21,6 +21,9 @@ function schechter_setup() {
 	
 	// Add menu for the footer.
 	register_nav_menu( 'footer', __( 'Footer Menu', 'schechtertheme' ) );
+	
+	// Add menu for registered users.
+	register_nav_menu( 'private', __( 'Private Menu', 'schechtertheme' ) );
 
 	// Add support for custom backgrounds
 	//add_custom_background();
@@ -65,3 +68,13 @@ function schechter_widgets_init() {
 }
 
 add_action( 'widgets_init', 'schechter_widgets_init' );
+
+// Create the role for private readers
+add_role('privatereader', 'Private Reader', array(
+            'read' => 1,
+            'level_0' => 1,
+            'read_private_pages' => 1,
+            'read_private_posts' => 1,
+        ));
+
+?>

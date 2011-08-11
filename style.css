@@ -2,104 +2,56 @@
 Theme Name:     Schechter Theme
 Theme URI:      http: //bbmg.com/
 Description:    Design created for the Schechter Network 
-Author:         Mauricio Camacho
+Author:         Designer Scott Ketchum - Developer Mauricio Camacho
 Author URI:     http: //bbmg.com/
 Version:        1.0
 Tags: 		two-columns, fixed-width, translation-ready, rtl-language-support, editor-style, custom-menu (optional)
 */
 
+@import url('css/reset.css');
+@import url('css/home.css');
+@import url('css/menu.css');
 
-/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
--------------------------------------------------------------- */
+/* = Global
+----------------------------------------------- */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-	border: 0;
-	font-family: inherit;
-	font-size: 100%;
-	font-style: inherit;
-	font-weight: inherit;
-	margin: 0;
-	outline: 0;
-	padding: 0;
-	vertical-align: baseline;
-}
-:focus {/* remember to define focus styles! */
-	outline: 0;
-}
-body {
-	background: #fff;
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-table {/* tables still need 'cellspacing="0"' in the markup */
-	border-collapse: separate;
-	border-spacing: 0;
-}
-caption, th, td {
-	font-weight: normal;
-	text-align: left;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: "";
-}
-blockquote, q {
-	quotes: "" "";
-}
-a img {
-	border: 0;
-}
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
+body, input, textarea {
+	color: #333333;
+	font: 13px Arial, Helvetica, sans-serif;
 }
 
-/* =Structure
+a {
+	text-decoration:none;
+}
+
+/* = Structure
 ----------------------------------------------- */
 
 body {
 	padding: 0 1em;
 	background: transparent url(images/schechter-bg.gif) center top fixed no-repeat;
 }
-#page {
-	margin: 0 auto;
-	width: 950px;
-	padding: 25px 30px 0 20px;
-}
-#branding hgroup {
-	margin: 0 7.6%;
-}
-#access div {
-	margin: 0 7.6%;
-}
+	#page {
+		background: #fff;
+		margin: 0 auto;
+		width: 950px;
+		padding: 25px 30px 0 20px;
+	}
+		#branding {
+			position:relative;
+			margin-bottom:30px;
+		}
+		#main {
+			clear: both;
+		}
+		#colophon {
+			clear: both;
+			position:relative;
+			top:65px;
+			height:40px;
+		}
 
-#primary {
-	float: right;
-	margin: 0 0 0 -26.4%;
-	width: 100%;
-}
-#content {
-	margin: 0 7.6% 0 34%;
-	width: 58.4%;
-}
-#secondary {
-	float: left;
-	margin-left: 7.6%;
-	margin-right: 0;
-	width: 18.8%;
-}
-
-
-/* Alignment */
+/* Standard WP Classes */
 .alignleft {
 	display: inline;
 	float: left;
@@ -117,149 +69,55 @@ body {
 	margin-right: auto;
 }
 
-/* =Content
+/* = Header Structure
 ----------------------------------------------- */
-
-#main {
-    clear: both;
-}
-
-/* =Home 
------------------------------------------------ */
-/* navigation & carousel */
-#home-nav {
-    /*clear:both;*/
-}
-body.home div.menu-main-menu-container {
-    float:left;
-    width:250px;
-}
-
-#rotate-carousel {
-/*    display:inline-block;
-    height:300px;
-    width:500px;
-    background-color:#cccccc;*/
-}
-#rotate-carousel ,
-#rotate-carousel ul.slider li{
-    position:relative;
-}
-#rotate-carousel ul.slider hgroup {
-    position:absolute;
-    top: 300px;
-    left: 0;
-    /*background-color:#cccccc;*/
-    color: #ffffff;
-    width:100%;
-    height:100px;
-}
-#rotate-carousel ul.slider h1 {
-    font-size:2em;
-}
-#rotate-carousel ul.slider h1,
-#rotate-carousel ul.slider h2 {
-    width:65%;
-}
-#rotate-carousel ul.slider-numbers {
-    position:absolute;
-    top: 370px;
-    right: 0;
-    /*height:100px;*/
-}
-#rotate-carousel ul.slider-numbers li {
-    list-style:none;
-    float:left;
-}
-#rotate-carousel ul.slider-numbers a {
-    width:25px;
-    display:block;
-    text-align:center;
-    background-color:#dddddd;
-}
-/* content */
-body.home #primary {
-    clear:both;
-    float: none;
-    margin: 0;
-}
-body.home #content {
-    margin: 0;
-    width: 100%;
-    margin:25px 0;
-}
-body.home #content header{
-    display:none;
-}
-
-#supplementary.footer-widgets aside {
-    float:left;
-    width:210px;
-    overflow:hidden;
-    margin:0 10px;
-}
-#supplementary.footer-widgets aside a{
-    display:block;
-    height:100px;
-    overflow:hidden;
-}
-
-/* =Global
------------------------------------------------ */
-
-body, input, textarea {
-	color: #373737;
-	font: 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 300;
-	line-height: 1.625;
-}
-
-a {
-    text-decoration:none;
-}
-#page {
-	background: #fff;
-}
-
-/* =Header
------------------------------------------------ */
-#branding {
-    position:relative;
-}
-
 #site-title {
-    margin-right: 270px;
+    /*margin-right: 270px;*/
 }
 #site-title a{
     display:block;
     height:98px;
     width:266px;
-    text-indent:-1000px;
+    text-indent:-9999px;
     background:url(./images/schechter-logo.gif) no-repeat left top;
 }
 
 #top-head {
     position: absolute;
-    right: 7.6%;
+    right: 0;
     top:10px;
     text-align: right;
     width:460px;
 }
 
 #top-menu {
-    float:left;
     margin-right:30px;
+    overflow:hidden;
 }
 #top-menu li{
     float:left;
     margin:0 8px;
 }
+#top-menu a {
+	padding-left:12px;
+	color:#00446a;
+	line-height:22px;
+	background:transparent url(./images/button-icon.png) left center no-repeat;
+}
 
+#top-menu #tt-icon ,
+#top-menu #fb-icon {
+	margin:0 4px;
+}
+#top-menu #fb-icon {
+	margin-right:25px;
+}
 #tt-icon a,
 #fb-icon a{
-    display:block;
-    height:22px;
-    width:22px;
+	padding-left:0;
+	display:block;
+	height:22px;
+	width:22px;
 }
 #tt-icon a{
     background:url(./images/tt.gif) no-repeat center;
@@ -268,23 +126,60 @@ a {
     background:url(./images/fb.gif) no-repeat center;
 }
 
-#searchform {
-    /*float:right;*/
+#top-head .searchform {
+	position:absolute;
+	right:0;
+	top:0;
 }
-label.screen-reader-text {
+/* searchform */
+
+form.searchform div {
+	width:178px;
+	background: transparent url(./images/search-box-bg.png) no-repeat left center;
+}
+form.searchform input {
+	height:20px;
+	font-size:10px;
+	background-color:transparent;
+	border-width:0;
+	outline-width:0;
+}
+form.searchform .screen-reader-text {
 	display:none;
 }
+form.searchform #s {
+	width:100px;
+}
+form.searchform #searchsubmit {
+	text-align:left;
+	text-transform:uppercase;
+	color:#ffffff;
+	width:67px;
+}
+/* = Content Structure
+----------------------------------------------- */
+#primary {
+	float: right;
+	margin: 0 0 0 -26.4%;
+	width: 100%;
+}
+	#content {
+		margin: 0 7.6% 0 34%;
+		width: 58.4%;
+	}
+
+/* = Aside Structure
+----------------------------------------------- */
+#secondary {
+	float: left;
+	/*margin-left: 7.6%;*/
+	margin-right: 0;
+	/*width: 18.8%;*/
+}
+
 
 /* =Footer
 ----------------------------------------------- */
-
-#colophon {
-	clear: both;
-	position:relative;
-	top:65px;
-	height:40px;
-}
-
 footer#colophon,
 footer#colophon a {
 	color:#ffffff;
@@ -294,50 +189,9 @@ footer#colophon p {
 	font-size:10px;
 }
 
-/* =Footer Menu
--------------------------------------------------------------- */
+/* Footer Menu */
 
 footer#colophon ul.menu li {
 	float: left;
         margin:0 5px;
 }
-
-/*
- * Slider Specific Styles
- */
- 
-/*
- * BASIC / GENERAL STYLES
- */
-.slider-wrap{
-  width:700px;
-  height:400px;
-  overflow:hidden;
-  margin:0 auto;
-}
-
-.slider{
-  margin:0px;
-  padding:0px;
-  height:400px;
-}
-
-.slider li{
-  margin:0px;
-  padding:0px;
-  float:left;
-  width:700px;
-  list-style:none;
-}
-
-.slider-numbers{
-  margin:0;
-  padding:0;
-}
-
-ul.slider-numbers-0, ul.slider-numbers-1{
-  /*display:none;*/
-}
-
-/* WIdgets
-*/

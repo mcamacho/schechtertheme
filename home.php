@@ -7,7 +7,7 @@
 <?php get_header(); ?>
 	<div id="primary">
 		<div id="home-nav">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => '2' ) ); ?>
 			<!--end home navigation aside-->
 			<div id="rotate-carousel" class="slider-wrap">
 				<ul class="slider slider-1">
