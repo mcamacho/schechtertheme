@@ -1,0 +1,13 @@
+#menu-main-menu {
+    
+}
+
+#menu-main-menu > li {
+    border-left:4px solid #a40c34;
+    background-color:#ffe5ae;
+    width:214px;
+}
+
+#menu-main-menu > li > ul {
+    display:none;
+}

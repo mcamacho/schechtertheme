@@ -1,0 +1,105 @@
+/* = Home Specific
+----------------------------------------------- */
+/* general */
+body.home #primary {
+    clear:both;
+    float: none;
+    margin: 0;
+}
+
+/* navigation & carousel */
+#home-nav {
+    /*clear:both;*/
+}
+body.home div.menu-main-menu-container {
+    float:left;
+    width:250px;
+}
+
+#rotate-carousel {
+/*    display:inline-block;
+    height:300px;
+    width:500px;
+    background-color:#cccccc;*/
+}
+#rotate-carousel ,
+#rotate-carousel ul.slider li{
+    position:relative;
+}
+#rotate-carousel ul.slider hgroup {
+    position:absolute;
+    top: 300px;
+    left: 0;
+    /*background-color:#cccccc;*/
+    color: #ffffff;
+    width:100%;
+    height:100px;
+}
+#rotate-carousel ul.slider h1 {
+    font-size:2em;
+}
+#rotate-carousel ul.slider h1,
+#rotate-carousel ul.slider h2 {
+    width:65%;
+}
+#rotate-carousel ul.slider-numbers {
+    position:absolute;
+    top: 370px;
+    right: 0;
+    /*height:100px;*/
+}
+#rotate-carousel ul.slider-numbers li {
+    list-style:none;
+    float:left;
+}
+#rotate-carousel ul.slider-numbers a {
+    width:25px;
+    display:block;
+    text-align:center;
+    background-color:#dddddd;
+}
+
+#supplementary.footer-widgets aside {
+    float:left;
+    width:210px;
+    overflow:hidden;
+    margin:0 10px;
+}
+#supplementary.footer-widgets aside a{
+    display:block;
+    height:100px;
+    overflow:hidden;
+}
+
+/*
+ * Slider Specific Styles
+ */
+.slider-wrap{
+  width:700px;
+  height:400px;
+  overflow:hidden;
+  margin:0 auto;
+}
+
+.slider{
+  margin:0px;
+  padding:0px;
+  height:400px;
+}
+
+.slider li{
+  margin:0px;
+  padding:0px;
+  float:left;
+  width:700px;
+  list-style:none;
+}
+
+.slider-numbers{
+  margin:0;
+  padding:0;
+}
+
+ul.slider-numbers-0, ul.slider-numbers-1{
+  /*display:none;*/
+}
