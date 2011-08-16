@@ -34,8 +34,8 @@ body {
 	#page {
 		background: #fff;
 		margin: 0 auto;
-		width: 950px;
-		padding: 25px 30px 0 20px;
+		width: 960px;
+		padding: 25px 20px 0 20px;
 	}
 		#branding {
 			position:relative;
@@ -102,6 +102,9 @@ body {
 	padding-left:12px;
 	color:#00446a;
 	line-height:22px;
+}
+#top-menu a,
+footer#colophon a{
 	background:transparent url(./images/button-icon.png) left center no-repeat;
 }
 
@@ -160,12 +163,39 @@ form.searchform #searchsubmit {
 ----------------------------------------------- */
 #primary {
 	float: right;
-	margin: 0 0 0 -26.4%;
+	margin: 0 0 0 -248px;
 	width: 100%;
 }
 	#content {
-		margin: 0 7.6% 0 34%;
-		width: 58.4%;
+		margin: 0 0 0 248px;
+		width: 712px;
+	}
+	
+	h1.entry-title {
+		margin:5px 0 15px 0;
+	}
+	h1.entry-title a{
+		font-size:25px;
+		color:#666666;
+	}
+	
+	article.hero-footer h1.entry-title {
+		border:1px dashed #ffe5ae;
+		border-width:2px 0;
+		padding:5px 0 2px 0;
+		margin:20px 0 0;
+	}
+	article.hero-footer h1.entry-title a {
+		font-size:50px;
+		text-transform:uppercase;
+		color:#666666;
+	}
+	article.hero-footer h1.entry-title a span {
+		font-weight:bold;
+		color:#A40C34;
+	}
+	article.hero-footer div.entry-content {
+		margin:14px 0 22px 0;
 	}
 
 /* = Aside Structure
@@ -178,20 +208,26 @@ form.searchform #searchsubmit {
 }
 
 
+
 /* =Footer
 ----------------------------------------------- */
 footer#colophon,
 footer#colophon a {
 	color:#ffffff;
 }
+footer#colophon a {
+	padding-left:11px;
+}
 
 footer#colophon p {
+	float:right;
 	font-size:10px;
+	margin-top:3px;
 }
 
 /* Footer Menu */
 
 footer#colophon ul.menu li {
 	float: left;
-        margin:0 5px;
+        margin:0 7px;
 }

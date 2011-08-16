@@ -50,6 +50,7 @@
 				<?php endif ; ?>
 			</div><!-- #rotate-carousel -->
 		</div><!-- #home-nav -->
+		<div id="home-division"></div>
 	</div><!-- #primary -->
 	
 	<?php if ( is_active_sidebar( 'sidebar-home' ) ) : ?>

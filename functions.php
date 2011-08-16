@@ -24,6 +24,10 @@ function schechter_setup() {
 	
 	// Add menu for registered users.
 	register_nav_menu( 'private', __( 'Private Menu', 'schechtertheme' ) );
+	
+	// This theme uses Featured Images (also known as post thumbnails) for specific page Custom Header images
+	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 712, 300, true );
 
 	// Add support for custom backgrounds
 	//add_custom_background();
@@ -53,7 +57,18 @@ function schechter_widgets_init() {
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
-	) );	
+	) );
+	
+	//Add a footer sidebar for the main link first menu
+	register_sidebar( array(
+		'name' => __( 'Why Schechter', 'schechtertheme' ),
+		'id' => 'sidebar-why',
+		'description' => __( 'widget area for the why_schechter page over footer', 'schechtertheme' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
 
 	register_sidebar( array(
 		'name' => __( 'Content Footer', 'schechtertheme' ),

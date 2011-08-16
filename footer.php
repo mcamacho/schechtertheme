@@ -18,12 +18,9 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<?php if ( ! is_home() ) : ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/menu.js" type="text/javascript"></script>
-<?php endif ?>
 
 <?php wp_footer(); ?>
-
 
 </body>
 </html>

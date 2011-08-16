@@ -1,4 +1,4 @@
 //activate the rotator function for the given class
 jQuery(document).ready(function($){
-    $(".slider-1").rotator();
+    $(".slider-1").rotator({delay:10000});
 });

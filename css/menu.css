@@ -1,13 +1,46 @@
-#menu-main-menu {
-    
+#main ul.menu {
+    font-family:Myriad, Arial, Helvetica, sans-serif;
+    font-size:17px;
 }
 
-#menu-main-menu > li {
+#main ul.menu li {
     border-left:4px solid #a40c34;
     background-color:#ffe5ae;
     width:214px;
+    padding:8px 0;
+    margin-bottom:11px;
 }
 
-#menu-main-menu > li > ul {
+#main ul.menu a {
+    color:#731B36;
+    text-transform:uppercase;
+    display:block;
+    padding-left:11px;
+    padding-top:31px;
+    height:48px;
+    width:auto;
+}
+
+#main ul.sub-menu {
     display:none;
+}
+
+#main ul.sub-menu li {
+    border-left-width:0;
+    background-color:transparent;
+    width:auto;
+    padding:0;
+    margin:5px 0;
+}
+
+#main ul.sub-menu a {
+    color: #ffffff;
+    font-size:13px;
+    text-transform:none;
+    height:auto;
+    padding-top:0;
+}
+
+#main li.current-menu-item > a{
+    background: transparent url(../images/selected-menu.png) no-repeat left center;
 }
