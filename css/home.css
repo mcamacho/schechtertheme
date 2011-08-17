@@ -67,24 +67,30 @@ body.home div.menu-main-menu-container {
 #supplementary.footer-widgets{
     clear:left;
 }
-#supplementary.footer-widgets aside {
+aside.img_txt_wgt {
     float:left;
     width:218px;
     overflow:hidden;
     margin-left:29px;
 }
-#supplementary.footer-widgets aside:first-child {
+aside.img_txt_wgt:first-child {
     margin-left:0;
 }
-#supplementary.footer-widgets aside a{
+aside.img_txt_wgt a{
     display:block;
     height:137px;
     overflow:hidden;
 }
-#supplementary.footer-widgets aside h3{
+aside.img_txt_wgt h3{
+    text-transform:uppercase;
+    font-weight:bold;
     color:#731B36;
-    margin:9px 0;
+    margin:9px 0 3px 0;
     font-size:15px;
+}
+aside.img_txt_wgt div{
+    font-size:11px;
+    line-height:1.7em;
 }
 
 /*

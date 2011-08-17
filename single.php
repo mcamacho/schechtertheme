@@ -22,7 +22,7 @@ get_header(); ?>
 					<?php the_title(); ?>
 					<?php the_content(); ?>
 
-					<?php comments_template( '', true ); ?>
+					<?php /*comments_template( '', true );*/ ?>
 
 			</div><!-- #content -->
 		</div><!-- #primary -->

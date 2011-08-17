@@ -15,9 +15,16 @@ Tags: 		two-columns, fixed-width, translation-ready, rtl-language-support, edito
 /* = Global
 ----------------------------------------------- */
 
-body, input, textarea {
-	color: #333333;
-	font: 13px Arial, Helvetica, sans-serif;
+body {
+	color: #555555;
+	font-size: 13px;
+	font-family: Georgia, serif;
+}
+input, textarea, #top-head, #colophon, ul.menu, h1.entry-title, h2.entry-title, .img_txt_wgt h3 {
+	font-family: 'Proxima Nova', Arial, sans-serif;
+}
+.entry-content{
+	line-height:1.7em;
 }
 
 a {
@@ -186,7 +193,7 @@ form.searchform #searchsubmit {
 		margin:20px 0 0;
 	}
 	article.hero-footer h1.entry-title a {
-		font-size:50px;
+		font-size:64px;
 		text-transform:uppercase;
 		color:#666666;
 	}
@@ -206,7 +213,29 @@ form.searchform #searchsubmit {
 	margin-right: 0;
 	/*width: 18.8%;*/
 }
+#aside_quote {
+	margin:30px 0 0 15px;
+	font-family: 'Proxima Nova', Arial, sans-serif;
+	color:#A40C34;
+}
+#aside_quote p{
+	width:175px;
+	font-size: 14px;
+	line-height: 1.8em;
+}
 
+#aside_quote p:before,
+#aside_quote p:after {
+	content: '"';
+}
+
+#aside_quote ul {
+	margin-top:10px;
+	font-size: 12px;
+}
+#aside_quote ul span {
+	display:none;
+}
 
 
 /* =Footer
