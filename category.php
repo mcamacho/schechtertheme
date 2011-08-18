@@ -8,14 +8,12 @@
 
 		<section id="primary">
 			<div id="content" role="main">
+				<header class="page-header">
+					<?php $cat = single_cat_title("", false); ?>
+					<h1 class="page-title">Category: <?php echo $cat; ?></h1>
+				</header>
 
 			<?php if ( have_posts() ) : ?>
-
-				<header class="page-header">
-					<h1 class="page-title"><?php
-						printf( __( 'Search Results for: %s', 'schechtertheme' ), '<span>' . get_search_query() . '</span>' );
-					?></h1>
-				</header>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -26,7 +24,9 @@
 					<p class="entry-meta">
 						<?php the_time('F j, Y'); ?> | <?php the_category(', '); ?>
 					</p><!-- .entry-meta -->
-					<?php the_excerpt(); ?>
+					<div class="entry-content">
+						<?php the_excerpt(); ?>
+					</div><!-- .entry-content -->
 
 				<?php endwhile; ?>
 			<?php else : ?>

@@ -260,3 +260,23 @@ footer#colophon ul.menu li {
 	float: left;
         margin:0 7px;
 }
+
+/* = Find a School
+----------------------------------------------- */
+#sc-search-map,
+#sc-search-options,
+#sc-results{
+	padding:17px 0 10px;
+	line-height:1.5em;
+}
+
+#sc-search-options p {
+	float:left;
+	margin-right:10px;
+}
+
+#sc-search-options p.wide,
+#sc-search-options p.wide input,
+#sc-search-options p.wide select {
+	width:115px;
+}
