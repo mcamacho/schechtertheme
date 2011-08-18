@@ -9,12 +9,13 @@
 
 		<div id="primary">
 			<div id="content" role="main">
+				<?php 
+				if ( has_post_thumbnail() ) {
+				  the_post_thumbnail();
+				} 
+				?>
 
 				<?php the_post(); ?>
-				
-				<header class="entry-header">					
-					<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'schechtertheme' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-				</header><!-- .entry-header -->
 
 				<div class="entry-content">
 					<?php the_content(); ?>
@@ -117,15 +118,9 @@
 				//display the search alternatives
 				?>
 				
-				<div id="sc-search-map">
-					<h2>SEARCH BY GEOGRAPHIC LOCATION:</h2>
-					<p>Select a state or province on the map below.</p>
-					<?php include('inc/usa.php') ?>
-				</div><!-- #search-map -->
-				
 				<div id="sc-search-options">
 					<h2>SEARCH BY ZIP CODE AND GRADE LEVEL:</h2>
-					<h3>Enter your zip code and a grade level below.</h3>
+					<p>Enter your zip code and a grade level below.</p>
 					
 					<form>
 					<p class="wide"><label for="zip_code">Enter Zip Code </label>
@@ -150,6 +145,12 @@
 					</form>
 					
 				</div><!-- #search-options -->
+				
+				<div id="sc-search-map">
+					<h2>SEARCH BY GEOGRAPHIC LOCATION:</h2>
+					<p>Select a state or province on the map below.</p>
+					<?php include('inc/usa.php') ?>
+				</div><!-- #search-map -->
 				
 				<?php endif; ?>
 			

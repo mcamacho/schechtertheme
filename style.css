@@ -20,8 +20,8 @@ body {
 	font-size: 13px;
 	font-family: Georgia, serif;
 }
-input, textarea, #top-head, #colophon, ul.menu, h1.entry-title, h2.entry-title, .img_txt_wgt h3 {
-	font-family: 'Proxima Nova', Arial, sans-serif;
+input, textarea, #top-head, #colophon, ul.menu, h1, h2, h3, label {
+	font-family: proxima-nova, Arial, sans-serif;
 }
 .entry-content{
 	line-height:1.7em;
@@ -215,7 +215,7 @@ form.searchform #searchsubmit {
 }
 #aside_quote {
 	margin:30px 0 0 15px;
-	font-family: 'Proxima Nova', Arial, sans-serif;
+	font-family: proxima-nova, Arial, sans-serif;
 	color:#A40C34;
 }
 #aside_quote p{
@@ -270,7 +270,7 @@ footer#colophon ul.menu li {
 	line-height:1.5em;
 }
 
-#sc-search-options p {
+#sc-search-options form p {
 	float:left;
 	margin-right:10px;
 }
