@@ -18,8 +18,8 @@
 				  'numberposts' => -1,
 				  'post_status' => null,
 				  'post_mime_type' => 'image',
-				  'orderby' => 'menu_order',
-				  'order' => 'ASC',
+				  'orderby' => 'ID',
+				  'order' => 'DESC',
 				  );
 				
 				$attachments = get_posts($args);
