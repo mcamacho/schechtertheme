@@ -28,7 +28,8 @@ if (document.images)
 var Default = new Area('images/default.gif','');
 
 // Setup each states URL
-var AK = new Area('images/ak.gif','?state_id=1');
+var QC = new Area('images/qc.gif','?state_id=60');
+var ON = new Area('images/on.gif','?state_id=61');
 var AL = new Area('images/al.gif','?state_id=2');
 var AR = new Area('images/ar.gif','?state_id=5');
 var AZ = new Area('images/az.gif','?state_id=4');
@@ -40,7 +41,6 @@ var DE = new Area('images/de.gif','?state_id=9');
 var DW = new Area('images/de.gif','?state_id=10');
 var FL = new Area('images/fl.gif','?state_id=12');
 var GA = new Area('images/ga.gif','?state_id=13');
-var HI = new Area('images/hi.gif','?state_id=15');
 var IA = new Area('images/ia.gif','?state_id=19');
 var ID = new Area('images/id.gif','?state_id=16');
 var IL = new Area('images/il.gif','?state_id=17');
@@ -86,65 +86,64 @@ var WI = new Area('images/wi.gif','?state_id=58');
 <img src="<?php echo $inc_path?>images/default.gif" name="MAP" border="0" usemap="#MAP">
 
 <map name="MAP">
+  <area onMouseOver="DE.swp()" onMouseOut="DE.rst()" onclick="DE.nav()" shape="poly" coords="446,275,451,275,444,263,442,265">
+<area onMouseOver="RI.swp()" onMouseOut="RI.rst()" onclick="RI.nav()" shape="poly" coords="467,230,468,234,477,237,484,242,495,242,495,230,483,232,481,225">
+<area onMouseOver="MD.swp()" onMouseOut="MD.rst()" onclick="MD.nav()" shape="poly" coords="449,288,452,277,447,276,442,269,438,269,443,273">
+<area onMouseOver="WI.swp()" onMouseOut="WI.rst()" onclick="WI.nav()" shape="poly" coords="339,257,316,257,311,254,312,250,312,247,310,243,299,235,297,227,300,221,299,216,301,211,310,209,312,212,317,216,324,216,331,217,336,224,339,226,340,235">
+<area onMouseOver="MI.swp()" onMouseOut="MI.rst()" onclick="MI.nav()" shape="poly" coords="349,261,375,257,379,251,382,244,381,238,379,233,371,229,371,224,369,218,363,214,367,211,361,206,354,203,347,204,339,208,330,204,335,199,329,198,319,206,314,210,317,214,328,214,333,216,337,221,344,217,348,216,352,215,352,218,352,223,347,225,346,229,345,235,345,241,349,249">
+<area onMouseOver="DC.swp()" onMouseOut="DC.rst()" onclick="DC.nav()" shape="poly" coords="411,272,433,267,436,267,443,275,446,285,436,279,436,272,427,273,424,277">
+<area onMouseOver="DC.swp()" onMouseOut="DC.rst()" onclick="DC.nav()" shape="rect" coords="455,287,474,300">
+<area onMouseOver="WY.swp()" onMouseOut="WY.rst()" onclick="WY.nav()" shape="poly" coords="150,270,157,228,207,234,206,275,174,272">
+<area onMouseOver="WV.swp()" onMouseOut="WV.rst()" onclick="WV.nav()" shape="poly" coords="390,290,398,277,405,273,411,274,421,275,407,300,399,301,392,296">
+<area onMouseOver="WA.swp()" onMouseOut="WA.rst()" onclick="WA.nav()" shape="poly" coords="80,166,122,174,113,200,109,208,105,207,84,205,73,203,60,191,63,165">
+<area onMouseOver="VA.swp()" onMouseOut="VA.rst()" onclick="VA.nav()" shape="poly" coords="389,312,405,310,449,297,445,289,441,281,435,279,435,274,424,273,415,286,411,298,397,303">
+<area onMouseOver="VT.swp()" onMouseOut="VT.rst()" onclick="VT.nav()" shape="poly" coords="450,224,454,223,455,208,457,200,456,196,442,202">
+<area onMouseOver="VT.swp()" onMouseOut="VT.rst()" onclick="VT.nav()" shape="rect" coords="418,187,434,202">
+<area onMouseOver="UT.swp()" onMouseOut="UT.rst()" onclick="UT.nav()" shape="poly" coords="118,311,126,256,149,261,148,272,164,273,159,316">
+<area onMouseOver="TX.swp()" onMouseOut="TX.rst()" onclick="TX.nav()" shape="poly" coords="175,378,213,378,213,328,238,327,239,346,247,352,262,357,276,357,286,354,294,359,296,373,300,380,301,391,298,407,285,417,274,423,269,432,271,448,249,443,243,433,237,424,230,411,225,407,217,405,213,414,199,409,192,394,181,386">
+<area onMouseOver="TN.swp()" onMouseOut="TN.rst()" onclick="TN.nav()" shape="poly" coords="336,322,402,310,397,317,379,332,329,340">
+<area onMouseOver="SD.swp()" onMouseOut="SD.rst()" onclick="SD.nav()" shape="poly" coords="209,224,264,224,265,232,268,237,266,245,265,251,266,256,261,256,209,254">
+<area onMouseOver="SC.swp()" onMouseOut="SC.rst()" onclick="SC.nav()" shape="poly" coords="389,331,417,357,419,355,428,348,435,331,419,326,412,327,407,325">
+<area onMouseOver="PA.swp()" onMouseOut="PA.rst()" onclick="PA.nav()" shape="poly" coords="403,274,398,249,405,246,409,248,441,239,444,244,445,259,441,264">
+<area onMouseOver="OR.swp()" onMouseOut="OR.rst()" onclick="OR.nav()" shape="poly" coords="103,250,46,238,47,226,51,221,55,212,58,203,60,198,64,196,68,203,73,203,80,206,92,206,100,207,108,208,113,214,106,227">
+<area onMouseOver="OK.swp()" onMouseOut="OK.rst()" onclick="OK.nav()" shape="poly" coords="214,322,287,322,290,356,284,352,277,356,266,355,254,352,241,347,239,326,214,327">
+<area onMouseOver="OH.swp()" onMouseOut="OH.rst()" onclick="OH.nav()" shape="poly" coords="363,260,371,259,397,250,402,268,400,277,392,283,388,291,380,289,369,291">
+<area onMouseOver="ND.swp()" onMouseOut="ND.rst()" onclick="ND.nav()" shape="poly" coords="212,188,257,190,265,223,209,223">
+<area onMouseOver="NC.swp()" onMouseOut="NC.rst()" onclick="NC.nav()" shape="poly" coords="381,332,393,321,403,311,449,299,454,305,452,316,446,320,439,334,434,333,427,327,421,324,412,327,410,323">
+<area onMouseOver="NY.swp()" onMouseOut="NY.rst()" onclick="NY.nav()" shape="poly" coords="414,227,423,228,426,224,421,219,427,210,431,204,441,199,447,215,456,242,445,242,443,238,405,247,404,242,405,233">
+<area onMouseOver="NM.swp()" onMouseOut="NM.rst()" onclick="NM.nav()" shape="poly" coords="163,318,212,321,212,376,168,375,162,382,156,383">
+<area onMouseOver="NJ.swp()" onMouseOut="NJ.rst()" onclick="NJ.nav()" shape="poly" coords="445,243,453,244,452,252,455,255,454,262,453,267,445,263,447,257,446,250">
+<area onMouseOver="NJ.swp()" onMouseOut="NJ.rst()" onclick="NJ.nav()" shape="rect" coords="458,252,473,264">
+<area onMouseOver="NH.swp()" onMouseOut="NH.rst()" onclick="NH.nav()" shape="poly" coords="458,192,469,218,456,221,457,212,457,206,459,200">
+<area onMouseOver="NH.swp()" onMouseOut="NH.rst()" onclick="NH.nav()" shape="rect" coords="434,171,454,186">
+<area onMouseOver="NV.swp()" onMouseOut="NV.rst()" onclick="NV.nav()" shape="poly" coords="80,247,125,256,118,317,113,322,110,331,73,280">
+<area onMouseOver="NE.swp()" onMouseOut="NE.rst()" onclick="NE.nav()" shape="poly" coords="208,275,206,255,245,255,249,258,253,256,266,258,271,271,277,284,220,286,221,276">
+<area onMouseOver="MT.swp()" onMouseOut="MT.rst()" onclick="MT.nav()" shape="poly" coords="124,179,155,184,182,187,210,190,207,233,155,227,151,232,147,229,140,229,136,223,131,219,131,210,129,205,124,196,122,190">
+<area onMouseOver="MO.swp()" onMouseOut="MO.rst()" onclick="MO.nav()" shape="poly" coords="278,281,313,279,312,288,318,294,324,297,323,305,335,315,332,327,317,324,315,325,290,327,288,299">
+<area onMouseOver="MS.swp()" onMouseOut="MS.rst()" onclick="MS.nav()" shape="poly" coords="328,342,347,339,351,388,341,389,334,382,322,383,324,370,323,365,323,361,322,353">
+<area onMouseOver="MN.swp()" onMouseOut="MN.rst()" onclick="MN.nav()" shape="poly" coords="259,192,265,216,265,225,268,231,268,248,310,248,308,243,297,235,297,234,296,225,298,219,297,217,298,210,303,205,320,196,308,193,291,190,281,185,272,182">
+<area onMouseOver="MA.swp()" onMouseOut="MA.rst()" onclick="MA.nav()" shape="poly" coords="453,224,472,218,478,225,471,227,454,232">
+<area onMouseOver="MA.swp()" onMouseOut="MA.rst()" onclick="MA.nav()" shape="rect" coords="479,212,499,223">
+<area onMouseOver="MD.swp()" onMouseOut="MD.rst()" onclick="MD.nav()" shape="rect" coords="459,275,481,286">
+<area onMouseOver="ME.swp()" onMouseOut="ME.rst()" onclick="ME.nav()" shape="poly" coords="460,192,469,213,471,206,472,200,476,199,477,193,479,194,484,189,488,185,482,175,479,180,475,163,462,163">
+<area onMouseOver="LA.swp()" onMouseOut="LA.rst()" onclick="LA.nav()" shape="poly" coords="300,402,302,391,303,386,297,379,297,363,320,363,323,372,320,384,334,385,346,395,340,401,355,407,335,405,329,404,321,406,318,401,311,405">
+<area onMouseOver="KY.swp()" onMouseOut="KY.rst()" onclick="KY.nav()" shape="poly" coords="336,321,387,312,393,306,395,301,389,295,389,289,383,291,376,290,370,289,364,297,362,301,350,305,345,307">
+<area onMouseOver="KS.swp()" onMouseOut="KS.rst()" onclick="KS.nav()" shape="poly" coords="223,287,276,286,283,292,285,299,289,320,222,320">
+<area onMouseOver="IA.swp()" onMouseOut="IA.rst()" onclick="IA.nav()" shape="poly" coords="265,249,311,250,309,254,315,258,320,263,314,272,314,278,308,278,274,280,273,273,270,265,270,259">
+<area onMouseOver="IN.swp()" onMouseOut="IN.rst()" onclick="IN.nav()" shape="poly" coords="343,266,350,262,363,260,368,289,364,294,360,301,348,304">
+<area onMouseOver="IL.swp()" onMouseOut="IL.rst()" onclick="IL.nav()" shape="poly" coords="317,258,339,257,342,265,346,297,346,304,341,312,337,317,333,310,324,305,326,297,322,296,318,291,313,284,317,268,321,266">
+<area onMouseOver="ID.swp()" onMouseOut="ID.rst()" onclick="ID.nav()" shape="poly" coords="118,178,124,178,122,190,126,198,129,207,129,213,129,218,133,220,137,230,154,233,150,259,102,251,107,231,107,225,114,216,111,207">
+<area onMouseOver="GA.swp()" onMouseOut="GA.rst()" onclick="GA.nav()" shape="poly" coords="370,335,392,331,398,338,404,343,410,350,417,358,417,374,382,377">
+<area onMouseOver="FL.swp()" onMouseOut="FL.rst()" onclick="FL.nav()" shape="poly" coords="358,381,389,379,396,377,416,375,430,394,436,406,442,416,441,429,435,436,421,426,409,415,404,406,404,396,394,390,393,390,382,396,374,388,362,389">
+<area onMouseOver="DE.swp()" onMouseOut="DE.rst()" onclick="DE.nav()" shape="rect" coords="467,264,485,274">
+<area onMouseOver="CT.swp()" onMouseOut="CT.rst()" onclick="CT.nav()" shape="rect" coords="472,245,488,256">
+<area onMouseOver="CT.swp()" onMouseOut="CT.rst()" onclick="CT.nav()" shape="poly" coords="454,234,465,230,467,237,457,242">
+<area onMouseOver="CO.swp()" onMouseOut="CO.rst()" onclick="CO.nav()" shape="poly" coords="166,273,222,277,221,320,160,316">
+<area onMouseOver="CA.swp()" onMouseOut="CA.rst()" onclick="CA.nav()" shape="poly" coords="43,239,79,247,71,280,109,332,110,341,106,352,105,361,81,359,81,345,73,341,62,337,60,332,53,329,54,318,53,313,48,304,49,299,46,292,49,288,43,282,41,274,42,265,39,257,43,249">
+<area onMouseOver="AR.swp()" onMouseOut="AR.rst()" onclick="AR.nav()" shape="poly" coords="289,329,324,326,330,328,331,330,322,350,320,358,321,362,296,362,293,357">
+<area onMouseOver="AZ.swp()" onMouseOut="AZ.rst()" onclick="AZ.nav()" shape="poly" coords="120,314,161,318,155,381,143,380,134,378,103,360,107,358,108,355,109,348,111,339,112,325,118,321">
 
-<area onMouseOver="AK.swp()" onMouseOut="AK.rst()" onclick="AK.nav()" shape="poly" coords="167,297,149,304,150,320,132,313,121,317,125,335,138,342,136,353,127,359,129,376,145,391,152,399,165,406,143,420,115,428,88,431,66,426,38,416,20,403,13,379,7,373,0,388,4,404,20,428,45,442,70,450,87,453,118,451,144,448,159,445,177,430,198,437,213,423,219,405,232,398,251,395,262,400,278,410,288,420,300,436,311,448,345,450,348,438,337,415,312,396,300,383,280,383,276,373,277,358,277,334,276,296,276,282,263,272,240,264,230,259,220,252,199,256,185,261,176,267,164,278">
-<area onMouseOver="HI.swp()" onMouseOut="HI.rst()" onclick="HI.nav()" shape="poly" coords="356,367,348,348,343,336,335,327,318,327,326,342,338,359,342,371,340,381,342,393,353,401,368,397,373,389,373,373">
-<area onMouseOver="AL.swp()" onMouseOut="AL.rst()" onclick="AL.nav()" shape="poly" coords="387,181,409,179,415,205,419,221,396,223,398,233,392,229,388,211">
-<area onMouseOver="AZ.swp()" onMouseOut="AZ.rst()" onclick="AZ.nav()" shape="poly" coords="159,157,200,161,194,224,182,223,173,221,142,203,146,201,147,198,148,191,150,182,151,168,157,164">
-<area onMouseOver="AR.swp()" onMouseOut="AR.rst()" onclick="AR.nav()" shape="poly" coords="328,172,363,169,369,171,370,173,361,193,359,201,360,205,335,205,332,200">
-<area onMouseOver="CA.swp()" onMouseOut="CA.rst()" onclick="CA.nav()" shape="poly" coords="82,82,118,90,110,123,148,175,149,184,145,195,144,204,120,202,120,188,112,184,101,180,99,175,92,172,93,161,92,156,87,147,88,142,85,135,88,131,82,125,80,117,81,108,78,100,82,92">
-<area onMouseOver="CO.swp()" onMouseOut="CO.rst()" onclick="CO.nav()" shape="poly" coords="205,116,261,120,260,163,199,159">
-<area onMouseOver="CT.swp()" onMouseOut="CT.rst()" onclick="CT.nav()" shape="poly" coords="493,77,504,73,506,80,496,85">
-<area onMouseOver="CT.swp()" onMouseOut="CT.rst()" onclick="CT.nav()" shape="rect" coords="511,88,527,99">
-<area onMouseOver="DE.swp()" onMouseOut="DE.rst()" onclick="DE.nav()" shape="rect" coords="506,107,524,117">
-<area onMouseOver="FL.swp()" onMouseOut="FL.rst()" onclick="FL.nav()" shape="poly" coords="397,224,428,222,435,220,455,218,469,237,475,249,481,259,480,272,474,279,460,269,448,258,443,249,443,239,433,233,432,233,421,239,413,231,401,232">
-<area onMouseOver="GA.swp()" onMouseOut="GA.rst()" onclick="GA.nav()" shape="poly" coords="409,178,431,174,437,181,443,186,449,193,456,201,456,217,421,220">
-<area onMouseOver="ID.swp()" onMouseOut="ID.rst()" onclick="ID.nav()" shape="poly" coords="157,21,163,21,161,33,165,41,168,50,168,56,168,61,172,63,176,73,193,76,189,102,141,94,146,74,146,68,153,59,150,50">
-<area onMouseOver="IL.swp()" onMouseOut="IL.rst()" onclick="IL.nav()" shape="poly" coords="356,101,378,100,381,108,385,140,385,147,380,155,376,160,372,153,363,148,365,140,361,139,357,134,352,127,356,111,360,109">
-<area onMouseOver="IN.swp()" onMouseOut="IN.rst()" onclick="IN.nav()" shape="poly" coords="382,109,389,105,402,103,407,132,403,137,399,144,387,147">
-<area onMouseOver="IA.swp()" onMouseOut="IA.rst()" onclick="IA.nav()" shape="poly" coords="304,92,350,93,348,97,354,101,359,106,353,115,353,121,347,121,313,123,312,116,309,108,309,102">
-<area onMouseOver="KS.swp()" onMouseOut="KS.rst()" onclick="KS.nav()" shape="poly" coords="262,130,315,129,322,135,324,142,328,163,261,163">
-<area onMouseOver="KY.swp()" onMouseOut="KY.rst()" onclick="KY.nav()" shape="poly" coords="375,164,426,155,432,149,434,144,428,138,428,132,422,134,415,133,409,132,403,140,401,144,389,148,384,150">
-<area onMouseOver="LA.swp()" onMouseOut="LA.rst()" onclick="LA.nav()" shape="poly" coords="339,245,341,234,342,229,336,222,336,206,359,206,362,215,359,227,373,228,385,238,379,244,394,250,374,248,368,247,360,249,357,244,350,248">
-<area onMouseOver="ME.swp()" onMouseOut="ME.rst()" onclick="ME.nav()" shape="poly" coords="499,35,508,56,510,49,511,43,515,42,516,36,518,37,523,32,527,28,521,18,518,23,514,6,501,6">
-<area onMouseOver="MD.swp()" onMouseOut="MD.rst()" onclick="MD.nav()" shape="rect" coords="498,118,520,129">
-<area onMouseOver="MA.swp()" onMouseOut="MA.rst()" onclick="MA.nav()" shape="rect" coords="518,55,538,66">
-<area onMouseOver="MA.swp()" onMouseOut="MA.rst()" onclick="MA.nav()" shape="poly" coords="492,67,511,61,517,68,510,70,493,75">
-<area onMouseOver="MN.swp()" onMouseOut="MN.rst()" onclick="MN.nav()" shape="poly" coords="298,35,304,59,304,68,307,74,307,91,349,91,347,86,336,78,336,77,335,68,337,62,336,60,337,53,342,48,359,39,347,36,330,33,320,28,311,25">
-<area onMouseOver="MS.swp()" onMouseOut="MS.rst()" onclick="MS.nav()" shape="poly" coords="367,185,386,182,390,231,380,232,373,225,361,226,363,213,362,208,362,204,361,196">
-<area onMouseOver="MO.swp()" onMouseOut="MO.rst()" onclick="MO.nav()" shape="poly" coords="317,124,352,122,351,131,357,137,363,140,362,148,374,158,371,170,356,167,354,168,329,170,327,142">
-<area onMouseOver="MT.swp()" onMouseOut="MT.rst()" onclick="MT.nav()" shape="poly" coords="163,22,194,27,221,30,249,33,246,76,194,70,190,75,186,72,179,72,175,66,170,62,170,53,168,48,163,39,161,33">
-<area onMouseOver="NE.swp()" onMouseOut="NE.rst()" onclick="NE.nav()" shape="poly" coords="247,118,245,98,284,98,288,101,292,99,305,101,310,114,316,127,259,129,260,119">
-<area onMouseOver="NV.swp()" onMouseOut="NV.rst()" onclick="NV.nav()" shape="poly" coords="119,90,164,99,157,160,152,165,149,174,112,123">
-<area onMouseOver="NH.swp()" onMouseOut="NH.rst()" onclick="NH.nav()" shape="rect" coords="473,14,493,29">
-<area onMouseOver="NH.swp()" onMouseOut="NH.rst()" onclick="NH.nav()" shape="poly" coords="497,35,508,61,495,64,496,55,496,49,498,43">
-<area onMouseOver="NJ.swp()" onMouseOut="NJ.rst()" onclick="NJ.nav()" shape="rect" coords="497,95,512,107">
-<area onMouseOver="NJ.swp()" onMouseOut="NJ.rst()" onclick="NJ.nav()" shape="poly" coords="484,86,492,87,491,95,494,98,493,105,492,110,484,106,486,100,485,93">
-<area onMouseOver="NM.swp()" onMouseOut="NM.rst()" onclick="NM.nav()" shape="poly" coords="202,161,251,164,251,219,207,218,201,225,195,226">
-<area onMouseOver="NY.swp()" onMouseOut="NY.rst()" onclick="NY.nav()" shape="poly" coords="453,70,462,71,465,67,460,62,466,53,470,47,480,42,486,58,495,85,484,85,482,81,444,90,443,85,444,76">
-<area onMouseOver="NC.swp()" onMouseOut="NC.rst()" onclick="NC.nav()" shape="poly" coords="420,175,432,164,442,154,488,142,493,148,491,159,485,163,478,177,473,176,466,170,460,167,451,170,449,166">
-<area onMouseOver="ND.swp()" onMouseOut="ND.rst()" onclick="ND.nav()" shape="poly" coords="251,31,296,33,304,66,248,66">
-<area onMouseOver="OH.swp()" onMouseOut="OH.rst()" onclick="OH.nav()" shape="poly" coords="402,103,410,102,436,93,441,111,439,120,431,126,427,134,419,132,408,134">
-<area onMouseOver="OK.swp()" onMouseOut="OK.rst()" onclick="OK.nav()" shape="poly" coords="253,165,326,165,329,199,323,195,316,199,305,198,293,195,280,190,278,169,253,170">
-<area onMouseOver="OR.swp()" onMouseOut="OR.rst()" onclick="OR.nav()" shape="poly" coords="142,93,85,81,86,69,90,64,94,55,97,46,99,41,103,39,107,46,112,46,119,49,131,49,139,50,147,51,152,57,145,70">
-<area onMouseOver="PA.swp()" onMouseOut="PA.rst()" onclick="PA.nav()" shape="poly" coords="442,117,437,92,444,89,448,91,480,82,483,87,484,102,480,107">
-<area onMouseOver="SC.swp()" onMouseOut="SC.rst()" onclick="SC.nav()" shape="poly" coords="428,174,456,200,458,198,467,191,474,174,458,169,451,170,446,168">
-<area onMouseOver="SD.swp()" onMouseOut="SD.rst()" onclick="SD.nav()" shape="poly" coords="248,67,303,67,304,75,307,80,305,88,304,94,305,99,300,99,248,97">
-<area onMouseOver="TN.swp()" onMouseOut="TN.rst()" onclick="TN.nav()" shape="poly" coords="375,165,441,153,436,160,418,175,368,183">
-<area onMouseOver="TX.swp()" onMouseOut="TX.rst()" onclick="TX.nav()" shape="poly" coords="214,221,252,221,252,171,277,170,278,189,286,195,301,200,315,200,325,197,333,202,335,216,339,223,340,234,337,250,324,260,313,266,308,275,310,291,288,286,282,276,276,267,269,254,264,250,256,248,252,257,238,252,231,237,220,229">
-<area onMouseOver="UT.swp()" onMouseOut="UT.rst()" onclick="UT.nav()" shape="poly" coords="157,154,165,99,188,104,187,115,203,116,198,159">
-<area onMouseOver="VT.swp()" onMouseOut="VT.rst()" onclick="VT.nav()" shape="rect" coords="457,30,473,45">
-<area onMouseOver="VT.swp()" onMouseOut="VT.rst()" onclick="VT.nav()" shape="poly" coords="489,67,493,66,494,51,496,43,495,39,481,45">
-<area onMouseOver="VA.swp()" onMouseOut="VA.rst()" onclick="VA.nav()" shape="poly" coords="428,155,444,153,488,140,484,132,480,124,474,122,474,117,463,116,454,129,450,141,436,146">
-<area onMouseOver="WA.swp()" onMouseOut="WA.rst()" onclick="WA.nav()" shape="poly" coords="119,9,161,17,152,43,148,51,144,50,123,48,112,46,99,34,102,8">
-<area onMouseOver="WV.swp()" onMouseOut="WV.rst()" onclick="WV.nav()" shape="poly" coords="429,133,437,120,444,116,450,117,460,118,446,143,438,144,431,139">
-<area onMouseOver="WY.swp()" onMouseOut="WY.rst()" onclick="WY.nav()" shape="poly" coords="189,113,196,71,246,77,245,118,213,115">
-<area onMouseOver="DC.swp()" onMouseOut="DC.rst()" onclick="DC.nav()" shape="rect" coords="494,130,513,143">
-<area onMouseOver="DC.swp()" onMouseOut="DC.rst()" onclick="DC.nav()" shape="poly" coords="450,115,472,110,475,110,482,118,485,128,475,122,475,115,466,116,463,120">
-<area onMouseOver="MI.swp()" onMouseOut="MI.rst()" onclick="MI.nav()" shape="poly" coords="388,104,414,100,418,94,421,87,420,81,418,76,410,72,410,67,408,61,402,57,406,54,400,49,393,46,386,47,378,51,369,47,374,42,368,41,358,49,353,53,356,57,367,57,372,59,376,64,383,60,387,59,391,58,391,61,391,66,386,68,385,72,384,78,384,84,388,92">
-<area onMouseOver="WI.swp()" onMouseOut="WI.rst()" onclick="WI.nav()" shape="poly" coords="378,100,355,100,350,97,351,93,351,90,349,86,338,78,336,70,339,64,338,59,340,54,349,52,351,55,356,59,363,59,370,60,375,67,378,69,379,78">
-<area onMouseOver="RI.swp()" onMouseOut="RI.rst()" onclick="RI.nav()" shape="poly" coords="506,73,507,77,516,80,523,85,534,85,534,73,522,75,520,68">
-<area onMouseOver="DE.swp()" onMouseOut="DE.rst()" onclick="DE.nav()" shape="poly" coords="485,118,490,118,483,106,481,108">
-<area onMouseOver="MD.swp()" onMouseOut="MD.rst()" onclick="MD.nav()" shape="poly" coords="488,131,491,120,486,119,481,112,477,112,482,116">
-
+<area onMouseOver="AL.swp()" onMouseOut="AL.rst()" onclick="AL.nav()" shape="poly" coords="348,338,370,336,376,362,380,378,357,380,359,390,353,386,349,368">
+<area onMouseOver="ON.swp()" onMouseOut="ON.rst()" onclick="ON.nav()" shape="poly" coords="269,154,304,107,326,118,344,114,351,138,376,153,390,194,416,198,417,204,428,204,420,217,401,229,402,238,391,243,382,254,383,240,386,221,395,216,382,208,367,211,352,196,331,189,322,190,273,181">
+<area onMouseOver="QC.swp()" onMouseOut="QC.rst()" onclick="QC.nav()" shape="poly" coords="344,32,359,31,366,26,379,34,388,30,398,50,415,49,413,27,453,69,432,79,450,106,468,104,460,88,471,99,507,71,497,101,458,124,458,136,451,164,465,141,478,128,484,132,470,146,461,163,458,171,434,170,432,185,416,185,416,196,392,192,376,151,364,112,373,86,352,73,353,54">
 </map>
