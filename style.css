@@ -264,9 +264,8 @@ footer#colophon ul.menu li {
 /* = Find a School
 ----------------------------------------------- */
 #sc-search-map,
-#sc-search-options,
-#sc-results{
-	padding:17px 0 10px;
+#sc-search-options{
+	padding-top:17px;
 	line-height:1.5em;
 }
 
@@ -279,4 +278,51 @@ footer#colophon ul.menu li {
 #sc-search-options p.wide input,
 #sc-search-options p.wide select {
 	width:115px;
+}
+#sc-search-options p.downl{
+	margin: 18px 12px 0 10px;
+	font-size:2em;
+}
+#sc-search-options input.downl{
+	margin-top: 22px;
+}
+#sc-results h2 {
+	border-bottom: 1px solid #333;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+}
+#sc-results h2 a{
+	float:right;
+}
+article.school_item{
+	padding-bottom: 10px;
+	margin-bottom:10px;
+	border-bottom:1px solid #333333;
+	overflow:hidden;
+}
+
+article.school_item img,
+article.school_item div.school-content,
+article.school_item div.school-content ul {
+	float:left;
+}
+article.school_item img{
+	margin-right: 20px;
+}
+article.school_item div.school-content{
+	width: 580px;
+	font-size: 12px;
+	line-height: 1.2em;
+}
+article.school_item div.school-content h1{
+	font-size:13px;
+}
+article.school_item div.school-content p{
+	margin-bottom:10px;
+}
+article.school_item div.school-content ul{
+	padding-right:30px;
+}
+article.school_item div.school-content li:first-child{
+	font-weight:bold;
 }
