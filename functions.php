@@ -22,9 +22,6 @@ function schechter_setup() {
 	// Add menu for the footer.
 	register_nav_menu( 'footer', __( 'Footer Menu', 'schechtertheme' ) );
 	
-	// Add menu for registered users.
-	register_nav_menu( 'private', __( 'Private Menu', 'schechtertheme' ) );
-	
 	// This theme uses Featured Images (also known as post thumbnails) for specific page Custom Header images
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 712, 300, true );
@@ -38,6 +35,9 @@ function schechter_widgets_init() {
 	
 	// register FooWidget widget
 	register_widget("Image_Text_Widget");
+	
+	// register Quotes widget
+	register_widget("Quotes_Widget");
 	
 	register_sidebar( array(
 		'name' => __( 'Main Sidebar', 'schechtertheme' ),
@@ -61,9 +61,9 @@ function schechter_widgets_init() {
 	
 	//Add a footer sidebar for the main link first menu
 	register_sidebar( array(
-		'name' => __( 'Why Schechter', 'schechtertheme' ),
-		'id' => 'sidebar-why',
-		'description' => __( 'widget area for the why_schechter page over footer', 'schechtertheme' ),
+		'name' => __( 'Widgets - Menu 1', 'schechtertheme' ),
+		'id' => 'sidebar-m1',
+		'description' => __( 'widget area for the main page of menu 1, hero-footer template must be assigned to the page, and order to 1', 'schechtertheme' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -71,9 +71,19 @@ function schechter_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Content Footer', 'schechtertheme' ),
-		'id' => 'sidebar-content',
-		'description' => __( 'widget area used in some content footer', 'schechtertheme' ),
+		'name' => __( 'Widgets - Menu 3', 'schechtertheme' ),
+		'id' => 'sidebar-m3',
+		'description' => __( 'widget area for the main page of menu 3, hero-footer template must be assigned to the page, and order to 3', 'schechtertheme' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Widgets - Menu 4', 'schechtertheme' ),
+		'id' => 'sidebar-m4',
+		'description' => __( 'widget area for the main page of menu 4, hero-footer template must be assigned to the page, and order to 4', 'schechtertheme' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -147,7 +157,7 @@ function quote_post_type_messages( $messages ) {
 }
 
 //display contextual help for Books
-//add_action( 'contextual_help', 'quote_post_type_add_help_text', 10, 3 );
+add_action( 'contextual_help', 'quote_post_type_add_help_text', 10, 3 );
 
 function quote_post_type_add_help_text($contextual_help, $screen_id, $screen) { 
   //$contextual_help .= var_dump($screen); // use this to help determine $screen->id
@@ -155,17 +165,12 @@ function quote_post_type_add_help_text($contextual_help, $screen_id, $screen) {
     $contextual_help =
       '<p>' . __('Things to remember when adding or editing a quote:') . '</p>' .
       '<ul>' .
-      '<li>' . __('Specify the correct genre such as Mystery, or Historic.') . '</li>' .
-      '<li>' . __('Specify the correct writer of the book.  Remember that the Author module refers to you, the author of this book review.') . '</li>' .
-      '</ul>' .
-      '<p>' . __('If you want to schedule the book review to be published in the future:') . '</p>' .
-      '<ul>' .
-      '<li>' . __('Under the Publish module, click on the Edit link next to Publish.') . '</li>' .
-      '<li>' . __('Change the date to the date to actual publish this article, then click on Ok.') . '</li>' .
-      '</ul>' .
-      '<p><strong>' . __('For more information:') . '</strong></p>' .
-      '<p>' . __('<a href="http://codex.wordpress.org/Posts_Edit_SubPanel" target="_blank">Edit Posts Documentation</a>') . '</p>' .
-      '<p>' . __('<a href="http://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>' ;
+      '<li>' . __('The Title is just for reference,') . '</li>' .
+      '<li>' . __('The content will be shown within quotes.') . '</li>' .
+      '<li>' . __('The custom fields are shown in this order and are:') . '</li>' .
+      '<li>' . __('Name, Location, School, Class, Other and Link (this one not display).') . '</li>' .
+      '<li>' . __('If the custom fields are not included just the content will be showed.') . '</li>' .
+      '</ul>' ;
   } elseif ( 'edit-book' == $screen->id ) {
     $contextual_help = 
       '<p>' . __('This is the help screen displaying the table of books blah blah blah.') . '</p>' ;

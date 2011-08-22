@@ -29,6 +29,7 @@ input, textarea, #top-head, #colophon, ul.menu, h1, h2, h3, label {
 
 a {
 	text-decoration:none;
+	outline:medium none; 
 }
 
 /* = Structure
@@ -144,7 +145,8 @@ footer#colophon a{
 /* searchform */
 
 form.searchform div {
-	width:178px;
+	width:180px;
+	text-align:right;
 	background: transparent url(./images/search-box-bg.png) no-repeat left center;
 }
 form.searchform input {
@@ -193,7 +195,7 @@ form.searchform #searchsubmit {
 		margin:20px 0 0;
 	}
 	article.hero-footer h1.entry-title a {
-		font-size:64px;
+		font-size:62px;
 		text-transform:uppercase;
 		color:#666666;
 	}
@@ -217,9 +219,13 @@ form.searchform #searchsubmit {
 	margin:30px 0 0 15px;
 	font-family: proxima-nova, Arial, sans-serif;
 	color:#A40C34;
+	width:175px;
+}
+#aside_quote h3 {
+	display:none;
 }
 #aside_quote p{
-	width:175px;
+	/*width:175px;*/
 	font-size: 14px;
 	line-height: 1.8em;
 }
@@ -277,7 +283,7 @@ footer#colophon ul.menu li {
 #sc-search-options p.wide,
 #sc-search-options p.wide input,
 #sc-search-options p.wide select {
-	width:115px;
+	width:122px;
 }
 #sc-search-options p.downl{
 	margin: 18px 12px 0 10px;
@@ -292,7 +298,15 @@ footer#colophon ul.menu li {
 	margin-bottom: 10px;
 }
 #sc-results h2 a{
-	float:right;
+	left: 445px;
+	position: relative;
+}
+h2.school-directory {
+	border-bottom: 2px solid #A40C34;
+	color: #333333;
+	font-size: 18px;
+	margin: 5px 0;
+	padding: 8px 10px 5px;
 }
 article.school_item{
 	padding-bottom: 10px;

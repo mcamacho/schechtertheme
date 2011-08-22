@@ -27,7 +27,8 @@
 						$the_query = $wpdb->get_results(
 							"SELECT *
 							FROM wp_dbt_schools
-							WHERE state = $state");
+							WHERE state = $state
+							ORDER BY state ASC , name ASC");
 						//print the state query
 						echo $wpdb->get_var("SELECT name FROM wp_dbt_states WHERE stateID = $state");
 					}
@@ -44,8 +45,8 @@
 						$grade = $_GET['grade_id'];
 						if($grade == '1'){
 						$query_string = 'SELECT * FROM wp_dbt_schools
-								WHERE lower_grade_level <= 22'
-								. ' AND upper_grade_level >= 9';
+								WHERE lower_grade_level <= 22
+								AND upper_grade_level >= 9';
 							echo ', all grade levels';
 						}else{
 						$query_string = 'SELECT * FROM wp_dbt_schools
@@ -58,6 +59,7 @@
 							$query_string = $query_string . ' OR state = ' . $state_id->stateID;
 						endforeach;
 						$query_string = $query_string . ')';
+						$query_string = $query_string . 'ORDER BY state ASC , name ASC';
 						//make the query
 						$the_query = $wpdb->get_results($query_string);
 					}
@@ -68,7 +70,8 @@
 						if($grade == '1'){
 						$the_query = $wpdb->get_results(
 							"SELECT *
-							FROM wp_dbt_schools");
+							FROM wp_dbt_schools
+							ORDER BY state ASC , name ASC");
 						echo 'all grade levels';
 						}
 						//search for school grades
@@ -77,7 +80,8 @@
 							"SELECT *
 							FROM wp_dbt_schools
 							WHERE lower_grade_level <= $grade
-							AND upper_grade_level >= $grade");
+							AND upper_grade_level >= $grade
+							ORDER BY state ASC , name ASC");
 						echo 'including level ' . $wpdb->get_var("SELECT label FROM wp_dbt_gradelevels WHERE value = $grade");
 						}
 					}

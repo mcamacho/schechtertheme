@@ -12,9 +12,10 @@
 				<header class="entry-header">					
 					<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'schechtertheme' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 				</header><!-- .entry-header -->
-				<div id="">
+				<div id="school-directory">
 				<?php
 					global $wpdb;
+					$statenametemp ='';
 					
 					$the_query = $wpdb->get_results(
 						"SELECT * 
@@ -25,10 +26,14 @@
 					//schools list results layout
 					foreach( $the_query as $post_results ) :
 						//db queries for state abbrev and grade levels
-						$state_name = $wpdb->get_var("SELECT abbrev FROM wp_dbt_states WHERE stateID = $post_results->state");
+						$state_abbr = $wpdb->get_var("SELECT abbrev FROM wp_dbt_states WHERE stateID = $post_results->state");
+						$state_name = $wpdb->get_var("SELECT name FROM wp_dbt_states WHERE stateID = $post_results->state");
 						$lower_level = $wpdb->get_var("SELECT label FROM wp_dbt_gradelevels WHERE value = $post_results->lower_grade_level");
 						$upper_level = $wpdb->get_var("SELECT label FROM wp_dbt_gradelevels WHERE value = $post_results->upper_grade_level");
-						
+						if( $statenametemp != $state_name) : ?>
+						<h2 class="school-directory"><?php echo $state_name ?></h2>
+						<?php $statenametemp = $state_name;
+						endif;
 						$re_html = '<article class="school_item">';
 						$re_html = $re_html . '<img src="' . $post_results->logo .'" title="' . $post_results->name . '" />';
 						$re_html = $re_html . '<div class="school-content">';
@@ -40,7 +45,7 @@
 						$re_html = $re_html . '</ul><ul style="width:160px;">';
 						$re_html = $re_html . '<li>Address:</li>';
 						$re_html = $re_html . '<li>' . $post_results->address . '</li>';
-						$re_html = $re_html . '<li>' . $post_results->city . ', ' . $state_name . ' ' . $post_results->zip . '</li>';
+						$re_html = $re_html . '<li>' . $post_results->city . ', ' . $state_abbr . ' ' . $post_results->zip . '</li>';
 						$re_html = $re_html . '</ul><ul style="width:270px;">';
 						$re_html = $re_html . '<li>Contact:</li>';
 						$re_html = $re_html . '<li>Tel: ' . $post_results->tel . '</li>';

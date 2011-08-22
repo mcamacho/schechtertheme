@@ -114,12 +114,73 @@ class Image_Text_Widget extends WP_Widget {
 		</select></p>
 		
 		<p><label for="<?php echo $this->get_field_id('elink'); ?>"><?php _e('External Link:'); ?></label>
-		<input class="widefat" id="<?php echo $this->get_field_id('elink'); ?>" name="<?php echo $this->get_field_name('elink'); ?>" type="text" value="<?php echo esc_attr($elink); ?>" /></p>
+		<input class="widefat" id="<?php echo $this->get_field_id('elink'); ?>" name="<?php echo $this->get_field_name('elink'); ?>" type="text" value="<?php if($elink == '') { echo esc_attr_e('http://'); }else{ echo esc_attr($elink);} ?>" /></p>
 		
 		<p><label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('Text:'); ?></label>
 		<textarea class="widefat" rows="6" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea></p>
 
 		
+<?php
+	}
+
+}
+
+/**
+ * Quotes_Widget Class
+ */
+class Quotes_Widget extends WP_Widget {
+    /** constructor */
+	function __construct() {
+		$widget_ops = array('classname' => 'aside_quote', 'description' => __( 'Alumni Quote Widget') );
+		parent::__construct('quotes-widget', __('Quotes Widget'), $widget_ops);
+	}
+
+	function widget( $args, $instance ) {
+		extract($args);
+		$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
+		$optlink = apply_filters( 'widget_optlink', $instance['optlink'], $instance );
+		echo $before_widget;?>
+		<div id="aside_quote">
+		<?php if ( !empty( $title ) ) { echo $before_title . $title . $after_title; } ?><?php
+		    global $post;
+		    $orderby = $optlink == 'random' ? 'rand' : 'post_date';
+		    $args = array( 'numberposts' => 1, 'post_type'=> 'sc_quote', 'orderby' => $orderby,'order' => 'DESC' );
+		    $myposts = get_posts( $args );
+		    foreach( $myposts as $post ) : setup_postdata($post);?>
+			    <?php the_content(); ?>
+			    <?php $thelink = count(get_post_meta(get_the_ID(), 'Link')) ? get_post_meta(get_the_ID(), 'Link', true) : ''; ?>
+			    <ul class="post-meta">
+			    <li><a href="<?php echo esc_url($thelink) ?>"><?php echo get_post_meta(get_the_ID(), 'Name', true); ?></a></li>
+			    <li><?php echo get_post_meta(get_the_ID(), 'Location', true); ?></li>
+			    <li><?php echo get_post_meta(get_the_ID(), 'School', true); ?></li>
+			    <li><?php echo get_post_meta(get_the_ID(), 'Class', true); ?></li>
+			    <li><?php echo get_post_meta(get_the_ID(), 'Other', true); ?></li>
+			    </ul>
+		    <?php endforeach; ?>
+		</div>
+		<?php
+		echo $after_widget;
+	}
+
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+		$instance['title'] = strip_tags( stripslashes($new_instance['title']) );
+		$instance['optlink'] =  $new_instance['optlink'];
+		return $instance;
+	}
+
+	function form( $instance ) {
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'optlink' => '') );
+		$title = strip_tags($instance['title']);
+		$optlink = esc_textarea($instance['optlink']);
+?>
+		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
+		<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
+		
+		<p><label><?php _e('Quote View Order:'); ?></label><br />
+		<input type="radio" name="<?php echo $this->get_field_name('optlink'); ?>" value="random" <?php if($optlink == 'random' || $optlink != 'last') echo 'checked="checked"'; ?> />Random
+		<input type="radio" name="<?php echo $this->get_field_name('optlink'); ?>" value="last" <?php if($optlink == 'last') echo 'checked="checked"'; ?> />Last
+		</p>
 <?php
 	}
 

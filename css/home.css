@@ -76,6 +76,10 @@ aside.img_txt_wgt {
 aside.img_txt_wgt:first-child {
     margin-left:0;
 }
+#ie6 aside.img_txt_wgt {
+    margin-left:17px;
+    width:210px;
+}
 aside.img_txt_wgt a{
     display:block;
     height:137px;
@@ -101,6 +105,9 @@ aside.img_txt_wgt div{
   height:413px;
   overflow:hidden;
   margin:0 auto;
+}
+#ie6 .slider-wrap{
+    width:710px;
 }
 
 .slider-wrap hgroup{
