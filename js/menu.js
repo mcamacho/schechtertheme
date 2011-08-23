@@ -25,7 +25,16 @@ jQuery(function() {
   }
   
   //interactive behavior----------------
-  
+  jQuery('#main ul.menu > li').not('li.current-menu-parent, li.current-menu-item').hover(
+    function() {
+      jQuery(this).css('background-color','#A40C34');
+      jQuery('a',this).css('color','#FFE5AE');
+      },
+    function() {
+      jQuery(this).css('background-color','#FFE5AE');
+      jQuery('a',this).css('color','#731B36');
+      }
+    );
   /*jQuery('#main ul.menu > li.current-menu-parent, #main ul.menu > li.current-menu-item').siblings().hover(
     function() {
       jQuery(this).css('min-height','77px')
@@ -42,7 +51,8 @@ jQuery(function() {
       }
     );*/
   
-  $specialTitle = jQuery('article.hero-footer h1.entry-title a');
+  //change title style for hover-tmpl
+  $specialTitle = jQuery('article.hero-footer h1.entry-title');
   if($specialTitle.length > 0){
     jQuery($specialTitle).each(function(i,val){
       $titletext = jQuery(val).text();
@@ -51,4 +61,7 @@ jQuery(function() {
       jQuery(val).html($titletext);
       });
   }
+  
+  //add link to quote paragraph
+  jQuery('#aside_quote p').wrapInner('<a href="' + jQuery('#aside_quote li a').attr('href') + '" />');
 });

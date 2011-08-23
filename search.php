@@ -16,16 +16,16 @@ get_header(); ?>
 						printf( __( 'Search Results for: %s', 'schechtertheme' ), '<span>' . get_search_query() . '</span>' );
 					?></h1>
 				</header>
-
-				<?php /* Start the Loop */ ?>
+				<div class="division"></div>
 				<?php while ( have_posts() ) : the_post(); ?>
 				
 					<h2 class="entry-title">
 						<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'schechtertheme' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
 					</h2>
-					<?php the_excerpt(); ?>
+					<div class="entry-content"><?php the_excerpt(); ?></div>
 
 				<?php endwhile; ?>
+				<div class="division"></div>
 			<?php else : ?>
 
 				<article id="post-0" class="post no-results not-found">

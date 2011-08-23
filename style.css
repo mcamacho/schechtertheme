@@ -16,7 +16,7 @@ Tags: 		two-columns, fixed-width, translation-ready, rtl-language-support, edito
 ----------------------------------------------- */
 
 body {
-	color: #555555;
+	color: #000000;
 	font-size: 13px;
 	font-family: Georgia, serif;
 }
@@ -76,6 +76,10 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+div.division {
+	border-top:1px solid #000000;
+	height:10px;
+}
 
 /* = Header Structure
 ----------------------------------------------- */
@@ -110,6 +114,9 @@ body {
 	padding-left:12px;
 	color:#00446a;
 	line-height:22px;
+}
+#top-menu a:hover {
+	text-decoration:underline;
 }
 #top-menu a,
 footer#colophon a{
@@ -180,30 +187,60 @@ form.searchform #searchsubmit {
 		width: 712px;
 	}
 	
-	h1.entry-title {
-		margin:5px 0 15px 0;
+	h1.entry-title,
+	h1.page-title {
+		margin:5px 0 10px;
+		font-size:36px;
+		color:#004250;
 	}
-	h1.entry-title a{
-		font-size:25px;
-		color:#666666;
+	h1.page-title span{
+		display:block;
+		font-size:20px;
+	}
+	h2.entry-title a {
+		font-size:14px;
+		color:#96172e;
+		line-height:18px;
+	}
+	h2.entry-title a:hover {
+		text-decoration:underline;
+	}
+	h2.entry-title a:visited {
+		color:#773141;
+	}
+	div.entry-content h3 {
+		font-size:14px;
+		line-height:18px;
+		font-weight:bold;
+	}
+	div.entry-content p {
+		margin-bottom:1em;
 	}
 	
+	div.entry-content p a:link {
+		color:#96172e;
+	}
+	div.entry-content p a:hover {
+		text-decoration:underline;
+	}
+	div.entry-content p a:visited {
+		color:#773141;
+	}
 	article.hero-footer h1.entry-title {
 		border:1px dashed #ffe5ae;
 		border-width:2px 0;
 		padding:5px 0 2px 0;
 		margin:20px 0 0;
-	}
-	article.hero-footer h1.entry-title a {
 		font-size:62px;
 		text-transform:uppercase;
 		color:#666666;
 	}
-	article.hero-footer h1.entry-title a span {
+	article.hero-footer h1.entry-title span {
 		font-weight:bold;
 		color:#A40C34;
 	}
-	article.hero-footer div.entry-content {
+	article.hero-footer div.entry-content,
+	div.find-school {
 		margin:14px 0 22px 0;
 	}
 
@@ -216,9 +253,8 @@ form.searchform #searchsubmit {
 	/*width: 18.8%;*/
 }
 #aside_quote {
-	margin:30px 0 0 15px;
 	font-family: proxima-nova, Arial, sans-serif;
-	color:#A40C34;
+	margin:30px 0 0 15px;
 	width:175px;
 }
 #aside_quote h3 {
@@ -228,19 +264,25 @@ form.searchform #searchsubmit {
 	/*width:175px;*/
 	font-size: 14px;
 	line-height: 1.8em;
+	color:#A40C34;
 }
-
+#aside_quote p a{
+	color:#A40C34;
+}
 #aside_quote p:before,
 #aside_quote p:after {
 	content: '"';
 }
 
-#aside_quote ul {
+#aside_quote ul.post-meta {
 	margin-top:10px;
 	font-size: 12px;
 }
-#aside_quote ul span {
-	display:none;
+#aside_quote ul.post-meta strong {
+	font-weight:bold;
+}
+#aside_quote ul.post-meta a {
+	color:#333333;
 }
 
 
@@ -252,6 +294,9 @@ footer#colophon a {
 }
 footer#colophon a {
 	padding-left:11px;
+}
+footer#colophon a:hover {
+	text-decoration:underline;
 }
 
 footer#colophon p {
@@ -267,14 +312,26 @@ footer#colophon ul.menu li {
         margin:0 7px;
 }
 
+/* Search Page */
+body.search #content p {
+	margin-bottom:15px;
+}
+
 /* = Find a School
 ----------------------------------------------- */
 #sc-search-map,
 #sc-search-options{
-	padding-top:17px;
+	padding-bottom:10px;
 	line-height:1.5em;
+	clear:left;
 }
-
+#sc-search-map h2,
+#sc-search-options h2{
+	font-size:20px;
+}
+#sc-search-options form {
+	margin:10px;
+}
 #sc-search-options form p {
 	float:left;
 	margin-right:10px;

@@ -13,7 +13,7 @@
 				//display the search results when variables on $_get url appears	
 				if ( isset($_GET['state_id']) || isset($_GET['zip_code']) ) : ?>
 				<header class="entry-header">					
-					<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'schechtertheme' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+					<h1 class="entry-title"><?php the_title(); ?></h1>
 				</header><!-- .entry-header -->
 				<div id="sc-results">
 				<?php
@@ -132,7 +132,7 @@
 
 				<?php the_post(); ?>
 
-				<div class="entry-content">
+				<div class="entry-content find-school">
 					<?php the_content(); ?>
 				</div><!-- .entry-content -->
 				<div id="sc-search-options">

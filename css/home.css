@@ -86,10 +86,15 @@ aside.img_txt_wgt a{
     overflow:hidden;
 }
 aside.img_txt_wgt h3{
+    margin:9px 0 3px 0;
+}
+aside.img_txt_wgt h3 a{
+    display:inline;
+    height:auto;
+    overflow:auto;
     text-transform:uppercase;
     font-weight:bold;
     color:#731B36;
-    margin:9px 0 3px 0;
     font-size:15px;
 }
 aside.img_txt_wgt div{

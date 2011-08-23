@@ -25,7 +25,7 @@ class Image_Text_Widget extends WP_Widget {
 		    else{$link = $elink;}
 		?>
 		<a href="<?php echo $link; ?>"><img src="<?php echo $image; ?>" alt="" /></a>
-		<?php if ( !empty( $title ) ) { echo $before_title . $title . $after_title; } ?>
+		<?php if ( !empty( $title ) ) { echo $before_title . '<a href="' . $link .'">' . $title . '</a>' .$after_title; } ?>
 		<div class="img_txt_wgt"><?php echo $text; ?></div>
 		<?php
 		echo $after_widget;
@@ -150,11 +150,11 @@ class Quotes_Widget extends WP_Widget {
 			    <?php the_content(); ?>
 			    <?php $thelink = count(get_post_meta(get_the_ID(), 'Link')) ? get_post_meta(get_the_ID(), 'Link', true) : ''; ?>
 			    <ul class="post-meta">
-			    <li><a href="<?php echo esc_url($thelink) ?>"><?php echo get_post_meta(get_the_ID(), 'Name', true); ?></a></li>
-			    <li><?php echo get_post_meta(get_the_ID(), 'Location', true); ?></li>
-			    <li><?php echo get_post_meta(get_the_ID(), 'School', true); ?></li>
-			    <li><?php echo get_post_meta(get_the_ID(), 'Class', true); ?></li>
-			    <li><?php echo get_post_meta(get_the_ID(), 'Other', true); ?></li>
+			    <li><a href="<?php echo esc_url($thelink) ?>"><strong><?php echo get_post_meta(get_the_ID(), 'Name', true); ?></strong></a></li>
+			    <li><a href="<?php echo esc_url($thelink) ?>"><?php echo get_post_meta(get_the_ID(), 'Location', true); ?></a></li>
+			    <li><a href="<?php echo esc_url($thelink) ?>"><?php echo get_post_meta(get_the_ID(), 'School', true); ?></a></li>
+			    <li><a href="<?php echo esc_url($thelink) ?>"><?php echo get_post_meta(get_the_ID(), 'Class', true); ?></a></li>
+			    <li><a href="<?php echo esc_url($thelink) ?>"><?php echo get_post_meta(get_the_ID(), 'Other', true); ?></a></li>
 			    </ul>
 		    <?php endforeach; ?>
 		</div>

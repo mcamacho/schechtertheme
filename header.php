@@ -78,8 +78,8 @@
 		<div id="top-head">
 			<nav role="navigation">
 				<ul id="top-menu">
-					<li id="tt-icon"><a href="#" title="twitter link"></a></li>	
-					<li id="fb-icon"><a href="#" title="facebook link"></a></li>
+					<li id="tt-icon"><a href="http://twitter.com/SchechterTweets" title="twitter link" target="_blank" ></a></li>	
+					<li id="fb-icon"><a href="http://www.facebook.com/pages/New-York-NY/Solomon-Schechter-Day-School-Association/133659643316565" title="facebook link" target="_blank" ></a></li>
 					<li><a href="<?php echo site_url('/private/'); ?>" title="Logout">Login</a></li>
 					<li><a href="<?php echo site_url('/contact-us/'); ?>" title="Contact Us">Contact Us</a></li>
 				</ul><!-- #top-menu -->

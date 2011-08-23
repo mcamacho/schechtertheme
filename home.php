@@ -29,7 +29,7 @@
 					<?php foreach ($attachments as $attachment) :
 						//Loop through attachments (images)
 						if($attachment->post_excerpt == 'Carousel') :
-							echo '<li><img src="' . $attachment->guid . '" alt="" />';
+							echo '<li><a href="'. home_url() .'/why-schechter/"><img src="' . $attachment->guid . '" alt="" /></a>';
 							echo '<hgroup><h1>' . $attachment->post_title . '</h1>';
 							echo '<h2>' . $attachment->post_content . '</h2></hgroup></li>';
 							$carousel_images = true;
