@@ -31,6 +31,8 @@ a {
 	text-decoration:none;
 	outline:medium none; 
 }
+strong{font-weight:bold;}
+em{font-style:italic;}
 
 /* = Structure
 ----------------------------------------------- */
@@ -63,12 +65,12 @@ body {
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: 1.625em;
+	margin: 10px;
 }
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: 1.625em;
+	margin: 10px;
 }
 .aligncenter {
 	clear: both;
