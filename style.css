@@ -103,6 +103,9 @@ div.division {
     text-align: right;
     width:460px;
 }
+#ie6 #top-head {
+	right:20px;
+}
 
 #top-menu {
     margin-right:30px;
@@ -124,6 +127,10 @@ div.division {
 footer#colophon a{
 	background:transparent url(./images/button-icon.png) left center no-repeat;
 }
+#ie6 #top-menu a,
+#ie6 footer#colophon a{
+	background:transparent url(./images/button-icon.gif) left center no-repeat;
+}
 
 #top-menu #tt-icon ,
 #top-menu #fb-icon {
@@ -139,9 +146,11 @@ footer#colophon a{
 	height:22px;
 	width:22px;
 }
+#ie6 #tt-icon a,
 #tt-icon a{
     background:url(./images/tt.gif) no-repeat center;
 }
+#ie6 #fb-icon a,
 #fb-icon a{
     background:url(./images/fb.gif) no-repeat center;
 }
@@ -273,7 +282,7 @@ form.searchform #searchsubmit {
 }
 #aside_quote p:before,
 #aside_quote p:after {
-	content: '"';
+	/*content: '"';*/
 }
 
 #aside_quote ul.post-meta {
@@ -372,6 +381,9 @@ article.school_item{
 	margin-bottom:10px;
 	border-bottom:1px solid #333333;
 	overflow:hidden;
+}
+#ie6 article.school_item{
+	height:100px;
 }
 
 article.school_item img,

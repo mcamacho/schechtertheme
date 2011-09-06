@@ -9,7 +9,8 @@ body.home #primary {
 
 /* navigation & carousel */
 #home-nav {
-    /*clear:both;*/
+    height:413px;
+    overflow:hidden;
 }
 body.home div.menu-main-menu-container {
     float:left;
@@ -66,19 +67,26 @@ body.home div.menu-main-menu-container {
 
 #supplementary.footer-widgets{
     clear:left;
+    margin-left:-12px;
+    width:740px;
+    overflow:hidden;
+}
+#ie6 #supplementary.footer-widgets{
+    margin-left:-28px;
+    width:752px;
+}
+body.home #supplementary.footer-widgets{
+    width:990px;
+}
+#ie6 body.home #supplementary.footer-widgets{
+    width:1002px;
+    margin-left:-22px;
 }
 aside.img_txt_wgt {
     float:left;
     width:218px;
     overflow:hidden;
-    margin-left:29px;
-}
-aside.img_txt_wgt:first-child {
-    margin-left:0;
-}
-#ie6 aside.img_txt_wgt {
-    margin-left:17px;
-    width:210px;
+    margin:0 14px;
 }
 aside.img_txt_wgt a{
     display:block;
@@ -111,8 +119,9 @@ aside.img_txt_wgt div{
   overflow:hidden;
   margin:0 auto;
 }
-#ie6 .slider-wrap{
-    width:710px;
+
+#ie6 body.home #primary {
+    width:970px;
 }
 
 .slider-wrap hgroup{
