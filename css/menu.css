@@ -50,6 +50,7 @@
 
 #main li.current-menu-item a.witharrow{
     background: transparent url(../images/selected-menu.png) no-repeat left center;
+    color:#FFE5AE;
 }
 #ie6 #main li.current-menu-item a.witharrow{
     background: transparent url(../images/selected-menu.gif) no-repeat left center;
