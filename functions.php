@@ -94,6 +94,76 @@ function schechter_widgets_init() {
 
 add_action( 'widgets_init', 'schechter_widgets_init' );
 
+//add carousel post type
+add_action('init', 'carousel_post_type');
+function carousel_post_type() 
+{
+  $labels = array(
+    'name' => _x('carousels', 'post type general name'),
+    'singular_name' => _x('carousel', 'post type singular name'),
+    'add_new' => _x('Add New', 'carousel'),
+    'add_new_item' => __('Add New carousel'),
+    'edit_item' => __('Edit carousel'),
+    'new_item' => __('New carousel'),
+    'all_items' => __('All carousels'),
+    'view_item' => __('View carousel'),
+    'search_items' => __('Search carousels'),
+    'not_found' =>  __('No carousels found'),
+    'not_found_in_trash' => __('No carousels found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'carousels'
+
+  );
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => false,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => false,
+    'capability_type' => 'post',
+    'has_archive' => true, 
+    'hierarchical' => false,
+    'menu_position' => null,
+    'supports' => array('title','thumbnail','custom-fields')
+  ); 
+  register_post_type('sc_carousel',$args);
+}
+
+add_action("admin_init", "add_carousel_meta_box");
+function add_carousel_meta_box(){
+  add_meta_box("carousel-file-path", "Carousel File", "carousel_meta_box", "sc_carousel");
+}
+function carousel_meta_box(){
+  global $post;
+  $custom = get_post_custom($post->ID);
+  $file_path = isset($custom["page ID"][0]) ? $custom["page ID"][0] : '';
+  echo '<label>carousel File:</label>';
+  echo '<select name="file-path" >';
+  echo '<option value="" >Select</option>';
+  global $wpdb;
+	$the_query = $wpdb->get_results("SELECT post_title, ID
+					FROM $wpdb->posts
+					WHERE post_type = 'page' AND post_status = 'publish'
+					ORDER BY  post_title ASC ");
+	foreach( $the_query as $post_results ) :
+		$selected = $post_results->ID == $file_path ? ' selected="selected"' : '';
+		echo '<option value="'. $post_results->ID .'" '. $selected .' >'. $post_results->post_title .'</option>';
+	endforeach; 
+  echo '</select>';
+}
+add_action('save_post', 'update_carousel_field');
+function update_carousel_field(){
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+      return;
+	if ( isset($_POST['post_type']) && 'sc_carousel' == $_POST['post_type'] ) 
+	{
+		global $post;
+		update_post_meta($post->ID, "page ID", $_POST["file-path"]);
+	}
+}
+
 //add quote post type
 add_action('init', 'quote_post_type');
 function quote_post_type() 

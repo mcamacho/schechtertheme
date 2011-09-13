@@ -14,12 +14,12 @@
 				<?php
 				global $post;
 				$args = array(
-				  'post_type' => 'attachment',
+				  'post_type' => 'sc_carousel',
 				  'numberposts' => -1,
 				  'post_status' => null,
-				  'post_mime_type' => 'image',
-				  'orderby' => 'ID',
-				  'order' => 'DESC',
+				'orderby' => 'meta_value_num',
+				'meta_key' => 'Order',
+				'order' => 'ASC',
 				  );
 				
 				$attachments = get_posts($args);
@@ -28,14 +28,12 @@
 				if ($attachments) : ?>
 					<?php foreach ($attachments as $attachment) :
 						//Loop through attachments (images)
-						if($attachment->post_excerpt == 'Carousel') :
-							echo '<li><a href="'. home_url() .'/why-schechter/"><img src="' . $attachment->guid . '" alt="" /></a>';
-							echo '<hgroup><h1>' . $attachment->post_title . '</h1>';
-							echo '<h2>' . $attachment->post_content . '</h2></hgroup></li>';
-							$carousel_images = true;
-							$carousel_amount += 1;
-							//End loop through attachments
-						endif; 
+						echo '<li><a href="'. get_permalink(get_post_meta($attachment->ID, 'page ID', true)) .'">' . get_the_post_thumbnail($attachment->ID, 'full') . '</a>';
+						echo '<hgroup><h1>' . $attachment->post_title . '</h1>';
+						echo '<h2></h2></hgroup></li>';
+						$carousel_images = true;
+						$carousel_amount += 1;
+						//End loop through attachments
 					endforeach;
 				endif ;
 				if ( ! $attachments || ! $carousel_images ) :
