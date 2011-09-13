@@ -3,6 +3,23 @@
  * 
  */
 
+//action added to redirect the site to the home login register page if the user hasn't more than a subscriber role
+add_action( 'template_redirect', 'schechter_redirect' );
+function schechter_redirect() {
+	if( preg_match( '/\bourapproach\b/' , ( $_SERVER['REQUEST_URI']) ) ){
+		wp_redirect(home_url('/learn-to-think/'));
+		exit;
+	}
+	if( preg_match( '/\bspirituality\b/' , ( $_SERVER['REQUEST_URI']) ) ){
+		wp_redirect(home_url('/discover-sense-of-self/'));
+		exit;
+	}
+	if( preg_match( '/\bglobalcitizen\b/' , ( $_SERVER['REQUEST_URI']) ) ){
+		wp_redirect(home_url('/become-a-global-citizen/'));
+		exit;
+	}
+} /*end schechter_private*/
+
 add_action( 'after_setup_theme', 'schechter_setup' );
 
 function schechter_setup() {
