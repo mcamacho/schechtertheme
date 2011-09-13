@@ -177,13 +177,4 @@ function quote_post_type_add_help_text($contextual_help, $screen_id, $screen) {
   }
   return $contextual_help;
 }
-
-// Create the role for private readers
-/*add_role('privatereader', 'Private Reader', array(
-            'read' => 1,
-            'level_0' => 1,
-            'read_private_pages' => 1,
-            'read_private_posts' => 1,
-        ));*/
-
 ?>
