@@ -50,7 +50,7 @@ function schechter_widgets_init() {
 	
 	//Add a footer sidebar for the home template
 	register_sidebar( array(
-		'name' => __( 'Home Footer', 'schechtertheme' ),
+		'name' => __( 'Home Footer Links', 'schechtertheme' ),
 		'id' => 'sidebar-home',
 		'description' => __( 'widget area for the home area over footer', 'schechtertheme' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -61,7 +61,7 @@ function schechter_widgets_init() {
 	
 	//Add a footer sidebar for the main link first menu
 	register_sidebar( array(
-		'name' => __( 'Widgets - Menu 1', 'schechtertheme' ),
+		'name' => __( 'Why Schechter Footer Links', 'schechtertheme' ),
 		'id' => 'sidebar-m1',
 		'description' => __( 'widget area for the main page of menu 1, hero-footer template must be assigned to the page, and order to 1', 'schechtertheme' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -71,7 +71,7 @@ function schechter_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Widgets - Menu 3', 'schechtertheme' ),
+		'name' => __( 'About the Network Footer Links', 'schechtertheme' ),
 		'id' => 'sidebar-m3',
 		'description' => __( 'widget area for the main page of menu 3, hero-footer template must be assigned to the page, and order to 3', 'schechtertheme' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -81,7 +81,7 @@ function schechter_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name' => __( 'Widgets - Menu 4', 'schechtertheme' ),
+		'name' => __( 'News Footer Links', 'schechtertheme' ),
 		'id' => 'sidebar-m4',
 		'description' => __( 'widget area for the main page of menu 4, hero-footer template must be assigned to the page, and order to 4', 'schechtertheme' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
