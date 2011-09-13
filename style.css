@@ -5,12 +5,258 @@ Description:    Design created for the Schechter Network
 Author:         Designer Scott Ketchum - Developer Mauricio Camacho
 Author URI:     http: //bbmg.com/
 Version:        1.0
-Tags: 		two-columns, fixed-width, translation-ready, rtl-language-support, editor-style, custom-menu (optional)
+Tags: 		two-columns, fixed-width, editor-style, custom-menu (optional)
 */
 
-@import url('css/reset.css');
-@import url('css/home.css');
-@import url('css/menu.css');
+/* http://meyerweb.com/eric/tools/css/reset/
+  v2.0 | 20110126
+License: none (public domain)
+----------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* = MENU
+----------------------------------------------- */
+#main ul.menu {
+    font-size:17px;
+}
+
+#main ul.menu li {
+    border-left:4px solid #a40c34;
+    background-color:#ffe5ae;
+    width:214px;
+    padding-top:8px;
+    padding-bottom:8px;
+    padding-left:0;
+    padding-right:0;
+    margin-bottom:11px;
+}
+
+#main ul.menu a {
+    color:#731B36;
+    text-transform:uppercase;
+    display:block;
+    padding-left:11px;
+    padding-top:31px;
+    height:48px;
+    width:198px;
+}
+
+#main ul.sub-menu {
+    display:none;
+}
+
+#main ul.sub-menu li {
+    border-left-width:0;
+    background-color:transparent;
+    width:auto;
+    padding:0;
+    padding-top:7px;
+    margin-bottom:7px;
+}
+#ie6 #main ul.sub-menu li,
+#ie7 #main ul.sub-menu li {
+    padding-top:0;
+}
+
+#main ul.sub-menu a {
+    color: #ffffff;
+    font-size:13px;
+    text-transform:none;
+    height:auto;
+    padding-top:0;
+}
+
+#main li.current-menu-item a.witharrow{
+    background: transparent url(images/selected-menu.png) no-repeat left center;
+    color:#FFE5AE;
+}
+#ie6 #main li.current-menu-item a.witharrow{
+    background: transparent url(images/selected-menu.gif) no-repeat left center;
+}
+/* = Home Specific
+----------------------------------------------- */
+/* general */
+body.home #primary {
+    clear:both;
+    float: none;
+    margin: 0;
+}
+
+/* navigation & carousel */
+#home-nav {
+    height:413px;
+    overflow:hidden;
+}
+body.home div.menu-main-menu-container {
+    float:left;
+    width:238px;
+}
+
+#rotate-carousel ,
+#rotate-carousel ul.slider li{
+    position:relative;
+}
+#rotate-carousel ul.slider hgroup {
+    position:absolute;
+    top: 300px;
+    left: 0;
+    color: #ffffff;
+    width:100%;
+    height:100px;
+}
+#rotate-carousel ul.slider h1 {
+    font-size:2em;
+}
+#rotate-carousel ul.slider h1,
+#rotate-carousel ul.slider h2 {
+    width:65%;
+}
+#rotate-carousel ul.slider-numbers {
+    position:absolute;
+    top: 370px;
+    right: 0;
+}
+#rotate-carousel ul.slider-numbers li {
+    list-style:none;
+    float:left;
+}
+#rotate-carousel ul.slider-numbers a {
+    width:25px;
+    display:block;
+    text-align:center;
+    background-color:#dddddd;
+}
+
+#home-division {
+    height:82px;
+    background:transparent url(images/home-division.png) center no-repeat;
+}
+
+#supplementary.footer-widgets{
+    clear:left;
+    margin-left:-12px;
+    width:740px;
+    overflow:hidden;
+}
+#ie6 #supplementary.footer-widgets{
+    margin-left:-28px;
+    width:752px;
+}
+body.home #supplementary.footer-widgets{
+    width:990px;
+}
+#ie6 body.home #supplementary.footer-widgets{
+    width:1002px;
+    margin-left:-22px;
+}
+aside.img_txt_wgt {
+    float:left;
+    width:218px;
+    overflow:hidden;
+    margin:0 14px;
+}
+aside.img_txt_wgt a{
+    display:block;
+    height:137px;
+    overflow:hidden;
+}
+aside.img_txt_wgt h3{
+    margin:9px 0 3px 0;
+}
+aside.img_txt_wgt h3 a{
+    display:inline;
+    height:auto;
+    overflow:auto;
+    text-transform:uppercase;
+    font-weight:bold;
+    color:#731B36;
+    font-size:15px;
+}
+aside.img_txt_wgt div{
+    font-size:11px;
+    line-height:1.7em;
+}
+
+/* Slider Specific Styles */
+.slider-wrap{
+  width:720px;
+  height:413px;
+  overflow:hidden;
+  margin:0 auto;
+}
+
+#ie6 body.home #primary {
+    width:970px;
+}
+
+.slider-wrap hgroup{
+    display:none;
+}
+.slider{
+  margin:0px;
+  padding:0px;
+  height:413px;
+}
+
+.slider li{
+  margin:0px;
+  padding:0px;
+  float:left;
+  width:720px;
+  list-style:none;
+}
+
+.slider-numbers{
+  margin:0;
+  padding:0;
+}
+
+ul.slider-numbers-0, ul.slider-numbers-1{
+  display:none;
+}
 
 /* = Global
 ----------------------------------------------- */
@@ -369,12 +615,20 @@ body.search #content p {
 	left: 445px;
 	position: relative;
 }
+#school-directory a,
+#sc-results a {
+	color:#96172e;
+}
+#school-directory a:hover,
+#sc-results a:hover{
+	text-decoration:underline;
+}
 h2.school-directory {
 	border-bottom: 2px solid #A40C34;
 	color: #333333;
 	font-size: 18px;
 	margin: 5px 0;
-	padding: 8px 10px 5px;
+	padding: 16px 10px 5px;
 }
 article.school_item{
 	padding-bottom: 10px;
