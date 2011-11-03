@@ -34,14 +34,35 @@
 					}
 					
 					elseif ( ! empty($_GET['zip_code']) &&  ! empty($_GET['grade_id']) ) {
-						$zip = substr($_GET['zip_code'],0,1);
-						//search for states relative to the first digit of the zip code
-						$state_query = $wpdb->get_results(
-							"SELECT stateID
-							FROM wp_dbt_states
-							WHERE zip1d = $zip");
+						$zip = $_GET['zip_code'];
+						//search for zipcodes in 50 milles round
+						$zip_query = $wpdb->get_results(
+							"
+							SELECT o.ZipCode, o.State,
+								(3956 * (2 * ASIN(SQRT(
+									POWER(SIN(((z.Latitude-o.Latitude)*0.017453293)/2),2) +
+									COS(z.Latitude*0.017453293) *
+									COS(o.Latitude*0.017453293) *
+									POWER(SIN(((z.Longitude-o.Longitude)*0.017453293)/2),2)
+								)))) AS Distance
+
+							FROM ZipCodes z,
+								ZipCodes o,
+								ZipCodes a
+
+							WHERE z.ZipCode = $zip  AND
+								z.ZipCode = a.ZipCode AND
+								(3956 * (2 * ASIN(SQRT(
+									POWER(SIN(((z.Latitude-o.Latitude)*0.017453293)/2),2) +
+									COS(z.Latitude*0.017453293) *
+									COS(o.Latitude*0.017453293) *
+									POWER(SIN(((z.Longitude-o.Longitude)*0.017453293)/2),2)
+								)))) <= 25
+
+							ORDER BY Distance
+							");
 							echo 'zip code ' . $_GET['zip_code'];
-						//construct the query based in the state_query
+						//construct the query based in the zip_query
 						$grade = $_GET['grade_id'];
 						if($grade == '1'){
 						$query_string = 'SELECT * FROM wp_dbt_schools
@@ -54,12 +75,13 @@
 								. ' AND upper_grade_level >= ' . $grade;
 							echo ', including level ' . $wpdb->get_var("SELECT label FROM wp_dbt_gradelevels WHERE value = $grade");
 						}
-						$query_string = $query_string . ' AND (state = 0';
-						foreach( $state_query as $state_id ) :
-							$query_string = $query_string . ' OR state = ' . $state_id->stateID;
+						$query_string = $query_string . ' AND (zip = 1';
+						foreach( $zip_query as $zip_num ) :
+							$allzip = $zip_num->ZipCode;
+							$query_string = $query_string . ' OR zip = ' . $allzip;
 						endforeach;
-						$query_string = $query_string . ')';
-						$query_string = $query_string . 'ORDER BY state ASC , name ASC';
+						$query_string = $query_string . ')';//echo $query_string;
+						$query_string = $query_string . 'ORDER BY zip DESC';
 						//make the query
 						$the_query = $wpdb->get_results($query_string);
 					}
