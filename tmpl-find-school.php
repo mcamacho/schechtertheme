@@ -36,9 +36,9 @@
 					elseif ( ! empty($_GET['zip_code']) &&  ! empty($_GET['grade_id']) ) {
 						$zip = $_GET['zip_code'];
 						//search for zipcodes in 50 milles round
-						$zip_query = $wpdb->get_results(
-							"
-							SELECT o.ZipCode, o.State,
+						$query_string = 'SELECT *
+                                FROM wp_dbt_schools y INNER JOIN
+                                (SELECT o.ZipCode,
 								(3956 * (2 * ASIN(SQRT(
 									POWER(SIN(((z.Latitude-o.Latitude)*0.017453293)/2),2) +
 									COS(z.Latitude*0.017453293) *
@@ -50,38 +50,31 @@
 								ZipCodes o,
 								ZipCodes a
 
-							WHERE z.ZipCode = $zip  AND
+							WHERE z.ZipCode = '.$zip.'  AND
 								z.ZipCode = a.ZipCode AND
 								(3956 * (2 * ASIN(SQRT(
 									POWER(SIN(((z.Latitude-o.Latitude)*0.017453293)/2),2) +
 									COS(z.Latitude*0.017453293) *
 									COS(o.Latitude*0.017453293) *
 									POWER(SIN(((z.Longitude-o.Longitude)*0.017453293)/2),2)
-								)))) <= 25
-
-							ORDER BY Distance
-							");
+								)))) <= 25) x
+                                WHERE y.zip = x.ZipCode
+';
 							echo 'zip code ' . $_GET['zip_code'];
 						//construct the query based in the zip_query
 						$grade = $_GET['grade_id'];
 						if($grade == '1'){
-						$query_string = 'SELECT * FROM wp_dbt_schools
-								WHERE lower_grade_level <= 22
+						$query_string = $query_string . 'AND lower_grade_level <= 22
 								AND upper_grade_level >= 9';
-							echo ', all grade levels';
+							echo ', all grade levels
+';
 						}else{
-						$query_string = 'SELECT * FROM wp_dbt_schools
-								WHERE lower_grade_level <= ' . $grade
+						$query_string = $query_string . 'AND lower_grade_level <= ' . $grade
 								. ' AND upper_grade_level >= ' . $grade;
 							echo ', including level ' . $wpdb->get_var("SELECT label FROM wp_dbt_gradelevels WHERE value = $grade");
 						}
-						$query_string = $query_string . ' AND (zip = 1';
-						foreach( $zip_query as $zip_num ) :
-							$allzip = $zip_num->ZipCode;
-							$query_string = $query_string . ' OR zip = ' . $allzip;
-						endforeach;
-						$query_string = $query_string . ')';//echo $query_string;
-						$query_string = $query_string . 'ORDER BY zip DESC';
+						$query_string = $query_string . '
+ORDER BY Distance';
 						//make the query
 						$the_query = $wpdb->get_results($query_string);
 					}
@@ -110,7 +103,7 @@
 					
 					//schools list results layout
 					echo '<a href="' . get_site_url() . '/?p=' . get_the_ID() . '" >Search Again</a>';
-					echo '</h2>';
+					echo '</h2><span style="display:none;">' . $zip . '</span>';
 					if (count($the_query)):
 					foreach( $the_query as $post_results ) :
 						//db queries for state abbrev and grade levels
@@ -196,6 +189,12 @@
 			</div><!-- #content -->
 			
 		</div><!-- #primary -->
-
+<script type="text/javascript">
+/*jQuery(function(){
+$zip = $('#sc-results > span').text();
+$('#sc-results').prepend($('article.school_item:contains('+ $zip +')'));
+$('#sc-results').prepend($('#sc-results > h2'));
+});*/
+</script>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
